@@ -1,7 +1,15 @@
+#   ___ _____
+#  / _ \___ /
+# | | | ||_ \
+# | |_| |__) |
+#  \___/____/
+#
+# This files overrides the optimization level for building packages with -O3.
+# Some packages may not support building with this level of optimisation.
 
-COMMON_FLAGS=" -O3 "
-CFLAGS="${CFLAGS} ${COMMON_FLAGS}"
-CXXFLAGS="${CXXFLAGS} ${COMMON_FLAGS}"
-FCFLAGS="${FCLAGS} ${COMMON_FLAGS}"
-FFLAGS="${FFLAGS} ${COMMON_FLAGS}"
-LDFLAGS="${LDFLAGS} ${COMMON_FLAGS} -Wl,-O2 "
+OLEVEL_FLAGS=" -O3 "
+CFLAGS="${CFLAGS} ${OLEVEL_FLAGS}"
+CXXFLAGS="${CXXFLAGS} ${OLEVEL_FLAGS}"
+FCFLAGS="${FCLAGS} ${OLEVEL_FLAGS}"
+FFLAGS="${FFLAGS} ${OLEVEL_FLAGS}"
+LDFLAGS="${LDFLAGS} ${OLEVEL_FLAGS} -Wl,-O2 "

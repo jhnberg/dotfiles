@@ -1,3 +1,19 @@
+#  _     _ __     ____  __
+# | |   | |\ \   / /  \/  |
+# | |   | | \ \ / /| |\/| |
+# | |___| |__\ V / | |  | |
+# |_____|_____\_/  |_|  |_|
+#
+# This files build packages with the LLVM toolchain. This means clang and
+# clang++ for C and C++ respectively, and using the llvm-* version of the
+# binutils. The LLVM linker ld.lld is also used as this is requried for
+# building with LTO.
+#
+# The linux kernel can also be built using this file as we setup all the
+# required tools and invoke the kernel make files with LLVM=1.
+
+LLVM=1
+
 CC="clang"
 CXX="clang++"
 CPP="clang-cpp"
@@ -9,5 +25,3 @@ STRIP="llvm-strip"
 OBJCOPY="llvm-objcopy"
 OBJDUMP="llvm-objdump"
 READELF="llvm-readelf"
-
-LLVM=1

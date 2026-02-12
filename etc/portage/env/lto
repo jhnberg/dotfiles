@@ -1,7 +1,22 @@
-COMMON_FLAGS=" -flto "
-CFLAGS="${CFLAGS} ${COMMON_FLAGS}"
-CXXFLAGS="${CXXFLAGS} ${COMMON_FLAGS}"
-FCFLAGS="${FCLAGS} ${COMMON_FLAGS}"
-FFLAGS="${FFLAGS} ${COMMON_FLAGS}"
-LDFLAGS="${LDFLAGS} ${COMMON_FLAGS} -Wl,-O2 "
+#  _   _____ ___
+# | | |_   _/ _ \
+# | |   | || | | |
+# | |___| || |_| |
+# |_____|_| \___/
+#
+# This file if for building packages with Link Time Optimization using LLVN and
+# GCC toolchains. Though they both accept the -flto argument the LTO, for LLVM
+# -flto=thin or -flto=full may be specified to choose between thin or full LTO.
+# But since this file is intended to support both, we just pass the -flto
+# flag without specifying.
+#
+# The LLVM and GCC LTO is not compatible, so it is a bad idea to build static
+# with LTO if both GCC and LLVM consume them.
+
+LTO_FLAGS=" -flto "
+CFLAGS="${CFLAGS} ${LTO_FLAGS}"
+CXXFLAGS="${CXXFLAGS} ${LTO_FLAGS}"
+FCFLAGS="${FCLAGS} ${LTO_FLAGS}"
+FFLAGS="${FFLAGS} ${LTO_FLAGS}"
+LDFLAGS="${LDFLAGS} ${LTO_FLAGS} -Wl,-O2 "
 RUSTFLAGS="${RUSTFLAGS} -C opt-level=3"
