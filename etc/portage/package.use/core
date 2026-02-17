@@ -55,7 +55,7 @@ net-misc/spice-gtk            usbredir
 net-print/cups                -X
 sys-apps/groff                -X
 sys-apps/systemd              policykit
-sys-fs/lvm2                   lvm
+sys-fs/lvm2                   lvm xfs
 sys-kernel/installkernel      dracut grub
 sys-kernel/linux-firmware     savedconfig
 sys-kernel/vanilla-kernel     savedconfig
