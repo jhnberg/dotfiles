@@ -13,6 +13,7 @@ dev-libs/fribidi               ABI_X86: 32
 dev-libs/glib                  ABI_X86: 32
 dev-libs/gmp                   ABI_X86: 32
 dev-libs/icu                   ABI_X86: 32
+dev-libs/json-c                ABI_X86: 32
 dev-libs/json-glib             ABI_X86: 32
 dev-libs/libevdev              ABI_X86: 32
 dev-libs/libffi                ABI_X86: 32
