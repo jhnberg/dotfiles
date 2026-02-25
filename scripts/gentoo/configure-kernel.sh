@@ -60,6 +60,21 @@ ${KERNEL_SRC}/scripts/config --file "${KERNEL_CONFIG}"                    \
                              --disable CONFIG_MD_RAID456                  \
                              --enable  CONFIG_NET                         \
                              --enable  CONFIG_PACKET                      \
+                             --enable  CONFIG_NET_ACT_CSUM                \
+                             --module  CONFIG_NET_ACT_POLICE              \
+                             --module  CONFIG_NET_SCH_HTB                 \
+                             --module  CONFIG_NET_SCH_SFQ                 \
+                             --module  CONFIG_NET_SCH_INGRESS             \
+                             --module  CONFIG_NET_CLS_U32                 \
+                             --module  CONFIG_NET_CLS_FW                  \
+                             --module  CONFIG_NFT_REJECT                  \
+                             --module  CONFIG_NFT_LIMIT                   \
+                             --module  CONFIG_NFT_MASQ                    \
+                             --enable  CONFIG_NF_CONNTRACK_TIMEOUT        \
+                             --enable  CONFIG_NF_TABLES_IPV4              \
+                             --module  CONFIG_NF_REJECT_IPV4              \
+                             --module  CONFIG_IP_NF_FILTER                \
+                             --module  CONFIG_IP_NF_NAT                   \
                              --module  CONFIG_CFG80211                    \
                              --disable CONFIG_SAMPLES                     \
                              --disable CONFIG_LIVEPATCH                   \
