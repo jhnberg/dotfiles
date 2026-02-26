@@ -29,6 +29,8 @@ gui-wm/gamescope
 gui-wm/hyprland
 mail-client/thunderbird
 media-fonts/fontawesome
+media-fonts/noto
+media-fonts/noto-emoji
 media-fonts/roboto
 media-fonts/symbols-nerd-font
 media-sound/cava
