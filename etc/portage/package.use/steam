@@ -15,6 +15,7 @@ dev-libs/gmp                   ABI_X86: 32
 dev-libs/icu                   ABI_X86: 32
 dev-libs/json-c                ABI_X86: 32
 dev-libs/json-glib             ABI_X86: 32
+dev-libs/leancrypto            ABI_X86: 32
 dev-libs/libevdev              ABI_X86: 32
 dev-libs/libffi                ABI_X86: 32
 dev-libs/libgcrypt             ABI_X86: 32
