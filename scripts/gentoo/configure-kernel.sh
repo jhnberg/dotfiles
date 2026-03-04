@@ -244,6 +244,10 @@ module  CONFIG_CFG80211
 enable  CONFIG_NET_NS
 enable  CONFIG_IPV6
 
+# Virtualisation
+enable  CONFIG_KVM_HYPERV
+disable CONFIG_KVM_XEN
+
 log "Updating ${KERNEL_CONFIG}"
 
 # Options that are not as simple as enable/module/disable are a bit
