@@ -73,6 +73,7 @@ net-libs/libndp                ABI_X86: 32
 net-libs/libpsl                ABI_X86: 32
 net-libs/nghttp2               ABI_X86: 32
 net-libs/nghttp3               ABI_X86: 32
+net-libs/ngtcp2                ABI_X86: 32
 net-misc/curl                  ABI_X86: 32
 net-misc/networkmanager        ABI_X86: 32
 net-print/cups                 ABI_X86: 32
