@@ -1,0 +1,38 @@
+From 54147e33bcbf34016ad15fd128c7e47d8a38c1cd Mon Sep 17 00:00:00 2001
+From: John Berg <john.berg.96bits@gmail.com>
+Date: Fri, 13 Mar 2026 00:09:03 +0000
+Subject: [PATCH 1/1] Fix json output for the submap command
+
+The output of ``hyprctl submap -j`` returns a string contained within
+curly braces e.g. ``{"default"}``. But this is not valid JSON as-per
+RFC-7159, as an object must be a set of name/value pairs. As a result,
+tools such as jq do not accept the current output. This patch is a
+simple fix is to drop the braces and return the string describing the
+current submap. The new JSON formatting is accepted by jq.
+
+This would be a breaking change for anything which consumes the current
+output of the submap command, but since parsers reject this (and since
+the output is pretty simple to parse without using the -j flag) impact
+might be more limited.
+
+Signed-off-by: John Berg <john.berg.96bits@gmail.com>
+---
+ src/debug/HyprCtl.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/debug/HyprCtl.cpp b/src/debug/HyprCtl.cpp
+index 31c22ac9..892e46df 100644
+--- a/src/debug/HyprCtl.cpp
++++ b/src/debug/HyprCtl.cpp
+@@ -2046,7 +2046,7 @@ static std::string submapRequest(eHyprCtlOutputFormat format, std::string reques
+     if (submap.empty())
+         submap = "default";
+ 
+-    return format == FORMAT_JSON ? std::format("{{\"{}\"}}\n", escapeJSONStrings(submap)) : (submap + "\n");
++    return format == FORMAT_JSON ? std::format("\"{}\"\n", escapeJSONStrings(submap)) : (submap + "\n");
+ }
+ 
+ static std::string reloadShaders(eHyprCtlOutputFormat format, std::string request) {
+-- 
+2.53.0
+
