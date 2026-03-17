@@ -43,6 +43,7 @@ FILES=("env/*"
        "package.use/ruby"
        "package.use/static"
        "package.use/steam"
+       "package.use/xorg"
        "patches/**/*/*.patch"
       )
 
