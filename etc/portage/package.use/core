@@ -38,6 +38,7 @@ media-libs/libvpx             postproc
 media-libs/libsdl2            gles2
 media-libs/tiff               jpeg
 media-sound/pavucontrol       sound
+media-video/pipewire          sound-server
 net-dns/dnsmasq               script
 net-im/discord                appindicator
 net-libs/gnutls               tools pkcs11
