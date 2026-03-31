@@ -170,7 +170,7 @@ disable CONFIG_MD_RAID456
 # The filesystesm used are EXT4, XFS and vFAT.
 # Other file systems are not enabled.
 disable CONFIG_EXT2_FS
-enable  CONFIG_EXT4_FS
+module  CONFIG_EXT4_FS
 enable  CONFIG_EXT4_USE_FOR_EXT2
 enable  CONFIG_EXT4_FS_POSIX_ACL
 enable  CONFIG_EXT4_FS_SECURITY

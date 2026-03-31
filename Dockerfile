@@ -1,14 +1,18 @@
-FROM gentoo/stage3:systemd
+FROM gentoo/stage3:systemd as base
 RUN emerge -q --sync
 RUN MAKEOPTS="-j$(nproc)"   \
     emerge -uqvDN @world
 
 # NOTE any change to the context causes a rebuild. It would be nice to
 # avoid this.
+FROM base AS install
 COPY . /tmp/dotfiles
 WORKDIR /tmp/dotfiles
 RUN ./scripts/gentoo/install.sh
+WORKDIR /
+RUN rm -rfd /tmp/dotfiles
 
+FROM install
 ARG USERNAME=docker
 ARG USER_UID=1000
 ARG USER_GID=1000

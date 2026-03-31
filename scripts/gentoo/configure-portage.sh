@@ -53,10 +53,6 @@ M4=("make.conf.m4"
     "package.use/videocards.m4"
    )
 
-# The enabled repos should are automatically detected.
-REPOS=$(portageq get_repos / | xargs -n1 | grep -vxF gentoo | xargs)
-
-
 for path in ${DIRS[@]}
 do
     for dir in etc/portage/${path[@]}
@@ -81,5 +77,10 @@ do
     m4 m4/${path} > ${PORTAGE_DIR}/${path%.m4}
 done
 
+# The enabled repos should are automatically detected.
+#
+# We must get the list of repos last as this only makes sense after we populate
+# all other directores e.g. the portage/repos.conf/ directory.
+REPOS=$(portageq get_repos / | xargs -n1 | grep -vxF gentoo | xargs)
 echo "[REPOS] Syncing... ${REPOS[@]}"
-emerge -v --sync ${REPOS[@]}
+emerge --ignore-default-opts -v --sync ${REPOS[@]}
