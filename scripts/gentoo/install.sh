@@ -32,5 +32,5 @@ scripts/gentoo/configure-portage.sh
 
 echo "Install..." > /dev/stderr
 # Do the main installation and cleanup
-emerge --ignore-default-opts -uqDN @primary
+emerge --ignore-default-opts -uqDN @main
 emerge --ignore-default-opts --deplean

@@ -1,3 +1,19 @@
+#  ____   ___  ____ _____  _    ____ _____
+# |  _ \ / _ \|  _ \_   _|/ \  / ___| ____|
+# | |_) | | | | |_) || | / _ \| |  _|  _|
+# |  __/| |_| |  _ < | |/ ___ \ |_| | |___
+# |_|    \___/|_| \_\|_/_/   \_\____|_____|
+#  _  _______ ____  _   _ _____ _       ____  _____ _____
+# | |/ / ____|  _ \| \ | | ____| |     / ___|| ____|_   _|
+# | ' /|  _| | |_) |  \| |  _| | |     \___ \|  _|   | |
+# | . \| |___|  _ <| |\  | |___| |___   ___) | |___  | |
+# |_|\_\_____|_| \_\_| \_|_____|_____| |____/|_____| |_|
+#
+# The kernel set (as the name suggests) contain the packages specific for
+# installing the kernel and booting the system. This set should be installed
+# after (or along with) the main set as this tool may depend on packages or
+# tools from that set.
+
 app-admin/eclean-kernel
 dev-embedded/fwup
 dev-python/zstandard

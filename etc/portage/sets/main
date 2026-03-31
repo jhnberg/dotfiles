@@ -1,3 +1,18 @@
+#  ____   ___  ____ _____  _    ____ _____
+# |  _ \ / _ \|  _ \_   _|/ \  / ___| ____|
+# | |_) | | | | |_) || | / _ \| |  _|  _|
+# |  __/| |_| |  _ < | |/ ___ \ |_| | |___
+# |_|    \___/|_| \_\|_/_/   \_\____|_____|
+#  __  __    _    ___ _   _   ____  _____ _____
+# |  \/  |  / \  |_ _| \ | | / ___|| ____|_   _|
+# | |\/| | / _ \  | ||  \| | \___ \|  _|   | |
+# | |  | |/ ___ \ | || |\  |  ___) | |___  | |
+# |_|  |_/_/   \_\___|_| \_| |____/|_____| |_|
+#
+# This file is the core set of packages which should be installed. It only
+# includes the dependencies for a minimal environment. Mainly focusing on the
+# cmdline.
+
 app-admin/sudo
 app-admin/sysstat
 app-arch/zstd
