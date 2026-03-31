@@ -16,6 +16,8 @@
 app-admin/sudo
 app-admin/sysstat
 app-arch/zstd
+app-containers/docker
+app-containers/docker-cli
 app-editors/neovim
 app-emulation/qemu
 app-eselect/eselect-repository
