@@ -1,5 +1,6 @@
 app-shells/zsh     static
 dev-build/make     static
+dev-debug/strace   static
 dev-libs/libpcre   static-libs
 dev-libs/libpcre2  static-libs
 dev-libs/openssl   static-libs

@@ -34,6 +34,7 @@ app-shells/gentoo-zsh-completions
 app-shells/zsh-autosuggestions
 app-shells/zsh-syntax-highlighting
 app-shells/zsh-completions
+dev-debug/strace
 dev-lang/rust
 dev-libs/tree-sitter-c
 dev-libs/tree-sitter-cmake
