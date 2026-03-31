@@ -53,6 +53,7 @@ media-sound/cava
 media-sound/pavucontrol
 media-sound/playerctl
 net-im/discord
+net-im/element-desktop
 net-wireless/blueman
 sys-auth/hyprpolkitagent
 sys-fs/udiskie
