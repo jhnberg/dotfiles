@@ -17,6 +17,7 @@ app-admin/sudo
 app-admin/sysstat
 app-arch/zstd
 app-editors/neovim
+app-emulation/qemu
 app-eselect/eselect-repository
 app-misc/cmatrix
 app-misc/fastfetch

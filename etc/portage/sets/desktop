@@ -14,6 +14,7 @@
 # this set should be installed after or with the main set.
 
 app-admin/bitwarden-desktop-bin
+app-emulation/virt-manager
 app-misc/corectrl
 app-misc/openrgb
 app-misc/piper
