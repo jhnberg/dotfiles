@@ -5,7 +5,7 @@
 */*                           -kde -gnome -qt5 -test -telemetry
 app-crypt/gcr                 gtk
 app-emulation/libvirt         policykit
-app-emulation/qemu            spice virgl
+app-emulation/qemu            gtk spice virgl
 app-emulation/virt-manager    gui policykit
 app-text/xmlto                text
 app-text/poppler              cairo
