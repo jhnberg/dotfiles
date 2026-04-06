@@ -12,10 +12,10 @@
  |_____\___/_/   \_(_)___|_| \_|___| |_|
 ]]--
 
-require("config.lazy")
 require("style")
 require("treesitter")
 require("lsp")
+require("plugins")
 
 vim.opt.number         = true
 vim.opt.relativenumber = true
