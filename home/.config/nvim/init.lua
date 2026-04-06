@@ -17,6 +17,8 @@ require("treesitter")
 require("lsp")
 require("plugins")
 
+vim.opt.title          = true
+vim.opt.titlestring    = "%t -- NeoVIM"
 vim.opt.number         = true
 vim.opt.relativenumber = true
 vim.opt.expandtab      = true
