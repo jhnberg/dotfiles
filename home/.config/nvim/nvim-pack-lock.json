@@ -1,0 +1,24 @@
+{
+  "plugins": {
+    "gentoo-syntax": {
+      "rev": "1b3a81ec62e5c843245dc431be0fe072add7eca8",
+      "src": "https://github.com/gentoo/gentoo-syntax",
+      "version": "'master'"
+    },
+    "plenary.nvim": {
+      "rev": "50012918b2fc8357b87cff2a7f7f0446e47da174",
+      "src": "https://github.com/nvim-lua/plenary.nvim",
+      "version": "'v0.1.4'"
+    },
+    "telescope.nvim": {
+      "rev": "5255aa27c422de944791318024167ad5d40aad20",
+      "src": "https://github.com/nvim-telescope/telescope.nvim",
+      "version": "'v0.2.2'"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive",
+      "version": "'master'"
+    }
+  }
+}
