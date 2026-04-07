@@ -21,4 +21,12 @@ vim.pack.add({
         src = "https://github.com/tpope/vim-fugitive",
         version = "master"
     },
+    {
+        src = "https://github.com/nvim-telescope/telescope.nvim",
+        version = "v0.2.2"
+    },
+    {
+        src = "https://github.com/nvim-lua/plenary.nvim",
+        version = "v0.1.4"
+    }
 })
