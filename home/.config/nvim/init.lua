@@ -12,10 +12,14 @@
  |_____\___/_/   \_(_)___|_| \_|___| |_|
 ]]--
 
+vim.g.mapleader      = " "
+vim.g.maplocalleader = " "
+
 require("style")
 require("treesitter")
 require("lsp")
 require("plugins")
+require("keybinds")
 
 vim.opt.title          = true
 vim.opt.titlestring    = "%t -- NeoVIM"
