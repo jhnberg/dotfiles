@@ -10,6 +10,11 @@
       "src": "https://github.com/nvim-lua/plenary.nvim",
       "version": "'v0.1.4'"
     },
+    "smear-cursor.nvim": {
+      "rev": "c85bdbb25db096fbcf616bc4e1357bd61fe2c199",
+      "src": "https://github.com/sphamba/smear-cursor.nvim",
+      "version": "'v0.6.0'"
+    },
     "telescope.nvim": {
       "rev": "5255aa27c422de944791318024167ad5d40aad20",
       "src": "https://github.com/nvim-telescope/telescope.nvim",

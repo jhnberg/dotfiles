@@ -28,5 +28,9 @@ vim.pack.add({
     {
         src = "https://github.com/nvim-lua/plenary.nvim",
         version = "v0.1.4"
+    },
+    {
+        src = "https://github.com/sphamba/smear-cursor.nvim",
+        version = "v0.6.0"
     }
 })
