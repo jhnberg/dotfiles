@@ -19,7 +19,6 @@ require("style")
 require("treesitter")
 require("lsp")
 require("plugins")
-require("keybinds")
 
 vim.opt.title          = true
 vim.opt.titlestring    = "%t -- NeoVIM"
@@ -38,3 +37,5 @@ vim.opt.cursorlineopt  = 'number'
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+require("config/telescope")
