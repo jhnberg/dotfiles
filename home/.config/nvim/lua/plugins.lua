@@ -15,11 +15,11 @@
 vim.pack.add({
     {
         src = "https://github.com/gentoo/gentoo-syntax",
-        version = "master"
+        version = "v16"
     },
     {
         src = "https://github.com/tpope/vim-fugitive",
-        version = "master"
+        version = "v3.7"
     },
     {
         src = "https://github.com/nvim-telescope/telescope.nvim",
