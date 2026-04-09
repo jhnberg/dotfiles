@@ -22,9 +22,9 @@ local ok, smear_cursor = pcall(require, 'smear_cursor')
 if ok then
     smear_cursor.setup({
         stiffness                      = 0.95,
-        stiffness_insert_mode          = 0.8,
-        trailing_stiffness             = 0.6,
-        trailing_stiffness_insert_mode = 0.7,
+        stiffness_insert_mode          = 1.0,
+        trailing_stiffness             = 0.4,
+        trailing_stiffness_insert_mode = 0.9,
         damping                        = 0.99,
         damping_insert_mode            = 0.99,
         distance_stop_animation        = 0.1,
