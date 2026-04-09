@@ -30,6 +30,10 @@ vim.opt.tabstop        = 4
 vim.opt.softtabstop    = 4
 vim.opt.shiftwidth     = 4
 
+vim.opt.timeout     = false
+vim.opt.timeoutlen  = 0
+vim.opt.ttimeoutlen = 0
+
 vim.opt.completeopt = "menuone,noinsert,popup"
 
 vim.opt.cursorline     = true
