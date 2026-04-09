@@ -25,7 +25,7 @@ if ok then
     vim.keymap.set('n', '<leader>fh',  builtin.help_tags, { desc = 'Telescope help tags' })
     vim.keymap.set('n', '<leader>fb',  builtin.buffers, { desc = 'Telescope find buffers' })
     vim.keymap.set('n', '<leader>fk',  builtin.keymaps, { desc = 'Telescope find keymaps' })
-    vim.keymap.set('n', '<leader>fg',  builtin.grep_string, { desc = 'Telescope find patterns' })
+    vim.keymap.set('n', '<leader>fg',  builtin.live_grep, { desc = 'Telescope find patterns' })
     vim.keymap.set('n', '<leader>fF',  builtin.oldfiles, { desc = 'Telescope find old files' })
     vim.keymap.set('n', '<leader>fM',  builtin.man_pages, { desc = 'Telescope find man pages' })
 
