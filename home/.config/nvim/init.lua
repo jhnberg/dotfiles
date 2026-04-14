@@ -12,37 +12,11 @@
  |_____\___/_/   \_(_)___|_| \_|___| |_|
 ]]--
 
-vim.g.mapleader      = " "
-vim.g.maplocalleader = " "
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-
 require("style")
 require("treesitter")
 require("lsp")
 require("plugins")
 
-vim.opt.title          = true
-vim.opt.titlestring    = "%t -- NeoVIM"
-vim.opt.number         = true
-vim.opt.relativenumber = true
-vim.opt.expandtab      = true
-vim.opt.tabstop        = 4
-vim.opt.softtabstop    = 4
-vim.opt.shiftwidth     = 4
-
-vim.opt.timeout     = false
-vim.opt.timeoutlen  = 0
-vim.opt.ttimeoutlen = 0
-
-vim.opt.completeopt = "menuone,noinsert,popup"
-
-vim.opt.cursorline     = true
-vim.opt.cursorlineopt  = 'number'
-
-vim.diagnostic.config({
-    virtual_text = true,
-})
-
+require("config/core")
 require("config/telescope")
-require("config/smear-cursor")
 require("config/statusline")
