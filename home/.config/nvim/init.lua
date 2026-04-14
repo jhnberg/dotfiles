@@ -45,3 +45,4 @@ vim.diagnostic.config({
 
 require("config/telescope")
 require("config/smear-cursor")
+require("config/statusline")
