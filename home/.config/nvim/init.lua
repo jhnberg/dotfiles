@@ -12,7 +12,6 @@
  |_____\___/_/   \_(_)___|_| \_|___| |_|
 ]]--
 
-require("style")
 require("config/plugins")
 
 require("config/core")

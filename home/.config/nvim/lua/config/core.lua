@@ -55,3 +55,5 @@ if ok then
         distance_stop_animation        = 0.1,
     })
 end
+
+require("theme/catppuccin").mocha.apply()
