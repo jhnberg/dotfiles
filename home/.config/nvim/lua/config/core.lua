@@ -42,9 +42,10 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
-local ok, smear_cursor = pcall(require, 'smear_cursor')
+local modules = require('util/modules')
+local smear_cursor = modules.include('smear_cursor')
 
-if ok then
+if smear_cursor then
     smear_cursor.setup({
         stiffness                      = 0.95,
         stiffness_insert_mode          = 1.0,

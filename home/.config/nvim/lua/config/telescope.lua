@@ -16,10 +16,10 @@
    \____\___/|_| \_|_|   |___\____|
 ]]--
 
+local modules = require('util/modules')
+local builtin = modules.include('telescope.builtin')
 
-local ok, builtin = pcall(require, 'telescope.builtin')
-
-if ok then
+if builtin then
     vim.keymap.set('n', '<leader>ff',  builtin.find_files, { desc = 'Telescope find files' })
     vim.keymap.set('n', '<leader>fm',  builtin.marks, { desc = 'Telescope find marks' })
     vim.keymap.set('n', '<leader>fh',  builtin.help_tags, { desc = 'Telescope help tags' })
