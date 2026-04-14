@@ -13,10 +13,10 @@
 ]]--
 
 require("style")
-require("treesitter")
-require("lsp")
-require("plugins")
+require("config/plugins")
 
 require("config/core")
+require("config/lsp")
+require("config/treesitter")
 require("config/telescope")
 require("config/statusline")
