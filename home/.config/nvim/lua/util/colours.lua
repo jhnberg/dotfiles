@@ -42,6 +42,13 @@ local function populate(scheme)
         ['WarningMsg']             = scheme.error,
         ['ModeMsg']                = scheme.informational,
 
+        -- Diagnostics
+        ['DiagnosticOK']           = scheme.success,
+        ['DiagnosticHint']         = scheme.hint,
+        ['DiagnosticInfo']         = scheme.informational,
+        ['DiagnosticWarn']         = scheme.warning,
+        ['DiagnosticError']        = scheme.error,
+
         -- Treesitter and LSP
         ['@attribute']             = scheme.attributes,
         ['@attribute.builtin']     = scheme.builtin,

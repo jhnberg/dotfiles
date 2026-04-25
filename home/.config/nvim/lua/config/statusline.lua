@@ -16,33 +16,68 @@
    \____\___/|_| \_|_|   |___\____|
 ]]--
 
-local lsp = require("util/lsp")
+vim.opt.modelineexpr = true
+vim.opt.laststatus   = 3
+vim.opt.statusline   = '%{%v:lua._StatusLineMain()%}'
+--vim.opt.showcmdloc   = 'statusline'
 
 local layout = {
-    left = {
+    {
         '%f',
         '%(%r%m%)',
     },
-    centre = {
-        '%(%{v:lua._StatusLineLspState()}%)',
-    },
-    right = {
+    {
+        '%{%v:lua._StatusLineDiagnostics()%}',
+        '%S',
         '%Y',
         '%10(%l:%c%)',
     }
 }
 
 function _StatusLineMain()
-    local left = table.concat(layout.left, ' ')
-    local centre = table.concat(layout.centre, ' ')
-    local right = table.concat(layout.right, ' ')
-    return string.format(' %s %%= %s %%= %s ', left, centre, right)
+    local groups = {}
+    for index, group in ipairs(layout) do
+        table.insert(groups, index, table.concat(group, ' '))
+    end
+    return string.format(' %s ', table.concat(groups, '%='))
 end
 
-function _StatusLineLspState()
-    local lsps = lsp.current_buf.get_active_lsps() or {}
-    return table.concat(lsps, ',')
-end
+function _StatusLineDiagnostics()
+    local format = {
+        {
+            severity = vim.diagnostic.severity.INFO,
+            format   = '%%#DiagnosticInfo#I: %d%%#world#',
+        },
+        {
+            severity = vim.diagnostic.severity.HINT,
+            format   ='%%#DiagnosticHint#H: %d%%#world#',
+        },
+        {
+            severity = vim.diagnostic.severity.WARN,
+            format   = '%%#DiagnosticWarn#W:%d%%#world#',
+        },
+        {
+            severity = vim.diagnostic.severity.ERROR,
+            format   = '%%#DiagnosticError#E: %d%%#world#',
+        },
+    }
 
-vim.opt.modelineexpr = true
-vim.opt.statusline   = '%{%v:lua._StatusLineMain()%}'
+    local diagnostics = vim.diagnostic.count(0, {
+        severity = {
+            vim.diagnostic.severity.HINT,
+            vim.diagnostic.severity.INFO,
+            vim.diagnostic.severity.WARN,
+            vim.diagnostic.severity.ERROR,
+        }
+    })
+
+    local output = {}
+    for _, entry in ipairs(format) do
+        local count = diagnostics[entry.severity] or 0
+        if count ~= 0 then
+            table.insert(output, string.format(entry.format, count))
+        end
+    end
+
+    return table.concat(output, ' ')
+end
