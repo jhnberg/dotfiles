@@ -49,6 +49,36 @@ local function populate(scheme)
         ['DiagnosticWarn']         = scheme.warning,
         ['DiagnosticError']        = scheme.error,
 
+        -- Diffs
+        ['Added']                  = scheme.added,
+        ['Removed']                = scheme.removed,
+        ['Changed']                = scheme.changed,
+
+        -- Base synatx highlighting
+        ['String']                 = scheme.string,
+        ['Number']                 = scheme.numbers,
+        ['Constant']               = scheme.constants,
+        ['Character']              = scheme.constants,
+        ['Boolean']                = scheme.constants,
+        ['Float']                  = scheme.constants,
+        ['Identifier']             = scheme.symbols,
+        ['Function']               = scheme.functions,
+        ['Conditional']            = scheme.keyword,
+        ['Repeat']                 = scheme.keyword,
+        ['Label']                  = scheme.keyword,
+        ['Keyword']                = scheme.keyword,
+        ['Exception']              = scheme.keyword,
+        ['Operator']               = scheme.operators,
+        ['PreProc']                = scheme.keyword,
+        ['Include']                = scheme.keyword,
+        ['Define']                 = scheme.keyword,
+        ['PreCond']                = scheme.keyword,
+        ['Macro']                  = scheme.macro,
+        ['StorageClass']           = scheme.keyword,
+        ['Type']                   = scheme.type,
+        ['Structure']              = scheme.keyword,
+        ['Typedef']                = scheme.keyword,
+
         -- Treesitter and LSP
         ['@attribute']             = scheme.attributes,
         ['@attribute.builtin']     = scheme.builtin,
