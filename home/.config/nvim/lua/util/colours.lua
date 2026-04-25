@@ -40,12 +40,12 @@ local function populate(scheme)
         ['OkMsg']                  = scheme.success,
         ['ErrMsg']                 = scheme.warning,
         ['WarningMsg']             = scheme.error,
-        ['ModeMsg']                = scheme.informational,
+        ['ModeMsg']                = scheme.info,
 
         -- Diagnostics
         ['DiagnosticOK']           = scheme.success,
         ['DiagnosticHint']         = scheme.hint,
-        ['DiagnosticInfo']         = scheme.informational,
+        ['DiagnosticInfo']         = scheme.info,
         ['DiagnosticWarn']         = scheme.warning,
         ['DiagnosticError']        = scheme.error,
 

@@ -56,7 +56,7 @@ local function derive_catppuccin_scheme(colours)
         popup           = { bg = colours.mantel },
         popup_selectecd = { fg = colours.rosewater, bg = colours.overlay2 },
         hint            = { fg = colours.lavender },
-        informational   = { fg = colours.teal },
+        info            = { fg = colours.teal },
         success         = { fg = colours.green },
         warning         = { fg = colours.yellow },
         error           = { fg = colours.red },
