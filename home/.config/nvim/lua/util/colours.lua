@@ -55,6 +55,7 @@ local function populate(scheme)
         ['Changed']                = scheme.changed,
 
         -- Base synatx highlighting
+        ['Delimiter']              = scheme.delimiter,
         ['String']                 = scheme.string,
         ['Number']                 = scheme.numbers,
         ['Constant']               = scheme.constants,
