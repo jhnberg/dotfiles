@@ -54,6 +54,12 @@ local function populate(scheme)
         ['Removed']                = scheme.removed,
         ['Changed']                = scheme.changed,
 
+        -- Spelling
+        ['SpellBad']               = scheme.spell_bad,
+        ['SpellCap']               = scheme.spell_cap,
+        ['SpellRare']              = scheme.spell_rare,
+        ['SpellLocal']             = scheme.spell_local,
+
         -- Base synatx highlighting
         ['Delimiter']              = scheme.delimiter,
         ['String']                 = scheme.string,
