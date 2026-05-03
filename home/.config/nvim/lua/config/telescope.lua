@@ -26,10 +26,12 @@ if builtin then
     vim.keymap.set('n', '<leader>fb',  builtin.buffers, { desc = 'Telescope find buffers' })
     vim.keymap.set('n', '<leader>fk',  builtin.keymaps, { desc = 'Telescope find keymaps' })
     vim.keymap.set('n', '<leader>fg',  builtin.live_grep, { desc = 'Telescope find patterns' })
+    vim.keymap.set('n', '<leader>fs',  builtin.spell_suggest, { desc = 'Telescope find spelling suggestions' })
     vim.keymap.set('n', '<leader>fF',  builtin.oldfiles, { desc = 'Telescope find old files' })
     vim.keymap.set('n', '<leader>fM',  builtin.man_pages, { desc = 'Telescope find man pages' })
 
     -- LSP
+    vim.keymap.set('n', '<leader>dS',  builtin.lsp_workspace_symbols, { desc = 'Telescope find symbols' })
     vim.keymap.set('n', '<leader>fd',  builtin.diagnostics, { desc = 'Telescope find diagnostics' })
     vim.keymap.set('n', '<leader>fr',  builtin.lsp_references, { desc = 'Telescope find references' })
 
