@@ -29,6 +29,13 @@ vim.opt.tabstop        = 4
 vim.opt.softtabstop    = 4
 vim.opt.shiftwidth     = 4
 
+vim.opt.spell     = true
+vim.opt.spelllang = {
+    "en_gb",
+    "en_us",
+    "sv"
+}
+
 vim.opt.timeout     = false
 vim.opt.timeoutlen  = 0
 vim.opt.ttimeoutlen = 0
