@@ -31,7 +31,7 @@ if builtin then
     vim.keymap.set('n', '<leader>fM',  builtin.man_pages, { desc = 'Telescope find man pages' })
 
     -- LSP
-    vim.keymap.set('n', '<leader>dS',  builtin.lsp_workspace_symbols, { desc = 'Telescope find symbols' })
+    vim.keymap.set('n', '<leader>fS',  builtin.lsp_workspace_symbols, { desc = 'Telescope find symbols' })
     vim.keymap.set('n', '<leader>fd',  builtin.diagnostics, { desc = 'Telescope find diagnostics' })
     vim.keymap.set('n', '<leader>fr',  builtin.lsp_references, { desc = 'Telescope find references' })
 
