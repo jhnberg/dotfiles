@@ -1,0 +1,19 @@
+#  _____ _____ ____ _____ 
+# |_   _| ____/ ___|_   _|
+#   | | |  _| \___ \ | |  
+#   | | | |___ ___) || |  
+#   |_| |_____|____/ |_|  
+#                         
+# This file administers the test USE flag to packages which should be tested
+# during the install. This is useful on important packages to ensure
+# correctness.
+
+app-shells/zsh            test
+app-misc/fastfetch        test
+dev-build/cmake           test
+dev-build/make            test
+dev-build/ninja           test
+dev-lang/python           test
+sys-apps/systemd          test
+sys-apps/findutils        test
+sys-kernel/vanilla-kernel test
