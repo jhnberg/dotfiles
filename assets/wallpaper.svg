@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="720"
+   height="400"
+   viewBox="0 0 720.00003 400.00001"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title37">Catpuccin Mocha Valknut</title>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient15">
+      <stop
+         style="stop-color:#f38ba8;stop-opacity:1;"
+         offset="0.82333672"
+         id="stop15" />
+      <stop
+         style="stop-color:#fab387;stop-opacity:1;"
+         offset="1"
+         id="stop16" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient460">
+      <stop
+         style="stop-color:#89b4fa;stop-opacity:1;"
+         offset="1"
+         id="stop460" />
+      <stop
+         style="stop-color:#89b4fa;stop-opacity:0;"
+         offset="1"
+         id="stop461" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient460"
+       id="linearGradient461"
+       x1="1847.1501"
+       y1="437.37958"
+       x2="1847.1501"
+       y2="610.57294"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient15"
+       id="linearGradient16"
+       x1="1726.7423"
+       y1="320.93222"
+       x2="1909.7966"
+       y2="637.99158"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="reflect" />
+  </defs>
+  <g
+     id="background_layer"
+     transform="translate(-2.9062514e-5)">
+    <rect
+       style="fill:#1e1e2e;fill-opacity:1;stroke-width:16.3074"
+       id="background"
+       width="100%"
+       height="100%"
+       x="2.9062514e-05"
+       y="0" />
+  </g>
+  <g
+     id="layer3"
+     transform="translate(-466.75514,-309.74648)">
+    <g
+       id="g210"
+       transform="matrix(0.37776635,0,0,0.37776635,112.61241,303.18127)"
+       style="display:inline;fill-rule:nonzero">
+      <path
+         id="path31-7-6"
+         style="display:inline;fill:#181825;fill-opacity:1"
+         d="m 799.48853,410.68677 c -5.09793,8.83125 -0.71537,1.23887 -79.63086,137.90625 H 763.469 l -32.71483,56.66992 c 53.09045,0.0323 106.18103,-0.0503 159.27147,-0.002 l -21.8125,-37.78516 c 21.81314,0.012 43.62633,-0.0198 65.43946,0 0,0 -76.00613,-131.60884 -79.64063,-137.9043 -7.265,12.58194 -14.53594,25.16046 -21.80469,37.74024 z"
+         transform="matrix(2.6471389,0,0,2.6471389,-298.10069,-797.88341)" />
+      <g
+         id="g3">
+        <path
+           id="path177"
+           style="fill:#cba6f7;fill-opacity:1;fill-rule:nonzero"
+           d="m 1734.5215,653.98241 c -26.8938,46.66536 -53.8732,93.33237 -80.8008,139.99023 128.927,-0.0149 257.8556,-3.3e-4 386.7813,-0.01 -26.9337,-46.65351 -53.8672,-93.30747 -80.8008,-139.96094 -15.3384,-0.003 -30.6755,-0.007 -46.0137,-0.01 8.3407,14.05756 16.5157,28.22991 24.4258,42.5586 l 4.1035,7.43359 h -190.3809 l 4.3379,-7.51758 c 8.1734,-14.1606 16.348,-28.32147 24.5215,-42.48242 -15.3732,0.005 -30.7872,0.0417 -46.1738,-0.002 z"
+           transform="translate(3.6188914e-7,1.3749989e-5)" />
+        <path
+           id="path143"
+           style="fill:url(#linearGradient461);fill-rule:nonzero"
+           d="m 1847.1546,459.00457 c -25.9657,44.98942 -51.9415,89.97451 -77.9141,134.95899 h 46.1543 c 9.1408,-15.83062 18.2827,-31.66323 27.4238,-47.49414 l 4.3399,-7.51758 4.3398,7.51758 c 9.1411,15.8308 18.2847,31.66319 27.4258,47.49414 h 46.1465 c -25.9688,-44.98843 -51.9369,-89.97741 -77.916,-134.95899 z"
+           transform="translate(-0.0159012,-0.01043253)" />
+      </g>
+      <g
+         id="g2"
+         style="fill-rule:nonzero"
+         transform="translate(3.6188914e-7,1.3749989e-5)">
+        <path
+           id="path205"
+           style="fill:#94e2d5;fill-opacity:1;fill-rule:nonzero"
+           d="m 1962.6172,358.99803 -80.7949,139.95899 c 0,0 0,0.002 0,0.002 14.5669,25.24867 17.3619,30.09285 23.0488,39.94336 l 28.8535,-49.96484 90.8906,157.37304 0.057,0.11328 c 0,-0.006 0,-0.002 0.01,0.0117 0,0.005 0.01,0.007 0.01,0.0156 l 4.3047,7.5039 -57.6699,0.0117 23.0547,39.93164 161.6035,0.043 C 2091.5324,582.29144 2027.0792,470.6445 1962.6219,358.99804 Z" />
+        <path
+           id="path141"
+           style="fill:#a6e3a1;fill-opacity:1;fill-rule:nonzero"
+           d="m 2013.3321,946.79667 c -25.9732,44.9937 -51.9596,89.98203 -77.9219,134.97653 51.9582,0 103.8921,-0.019 155.8379,0 -7.692,-13.3245 -15.3823,-26.6487 -23.0742,-39.9726 -18.2755,-0.01 -36.5532,-0.01 -54.8301,-0.01 h -8.6817 l 4.3399,-7.5176 c 9.1403,-15.8304 18.2814,-31.6635 27.4219,-47.49411 -7.6992,-13.32712 -15.3922,-26.66055 -23.0918,-39.97852 z"
+           transform="translate(-166.20707,-387.81231)" />
+      </g>
+      <g
+         id="g1"
+         style="fill:url(#linearGradient16)">
+        <path
+           id="path149"
+           style="fill:#fab387;fill-opacity:1;fill-rule:nonzero"
+           d="m 1818.2715,308.99999 -193.3867,334.96093 161.623,-0.01 23.0762,-39.96875 h -57.7285 l 95.2812,-165.03711 28.8672,49.99219 23.0703,-39.95899 z"
+           transform="translate(3.6188914e-7,1.3749989e-5)" />
+        <path
+           id="path137"
+           style="fill:#f38ba8;fill-opacity:1;fill-rule:nonzero"
+           d="m 1498.7132,326.37958 c -7.6899,13.32166 -15.3808,26.64349 -23.0703,39.96484 9.1633,15.82383 18.4003,31.95352 27.416,47.5 l 4.3184,7.44531 -8.6074,0.0801 c -18.2685,0.16953 -36.6932,-0.0106 -54.8848,-0.002 -7.6931,13.32538 -15.387,26.65121 -23.0801,39.97656 51.9456,-2e-4 103.8912,0.004 155.8359,0 -25.9729,-44.99009 -51.9475,-89.97936 -77.9277,-134.96484 z"
+           transform="translate(435.01335,182.60675)" />
+      </g>
+    </g>
+  </g>
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="https://opensource.org/license/mit" />
+        <dc:title>Catpuccin Mocha Valknut</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>John Berg</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
