@@ -2,7 +2,7 @@
 */*                           qt6 icu opengl vulkan pulseaudio pipewire
 */*                           bluetooth gamepad clang dri vaapi vdpau zstd
 */*                           evdev
-*/*                           -kde -gnome -qt5 -test -telemetry
+*/*                           -kde -gnome -qt5 -test -telemetry -branding
 app-crypt/gcr                 gtk
 app-emulation/libvirt         policykit
 app-emulation/qemu            gtk spice virgl
