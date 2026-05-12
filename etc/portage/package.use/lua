@@ -2,3 +2,4 @@
 */*                     LUA_SINGLE_TARGET: -* luajit
 dev-libs/libinput       LUA_SINGLE_TARGET: -* lua5-4
 media-video/wireplumber LUA_SINGLE_TARGET: -* lua5-4
+gui-wm/hyprland         LUA_SINGLE_TARGET: -* lua5-4
