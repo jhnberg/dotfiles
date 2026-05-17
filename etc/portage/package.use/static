@@ -6,6 +6,8 @@ dev-libs/libpcre2  static-libs
 dev-libs/openssl   static-libs
 net-misc/wget      static
 sys-apps/acl       static-libs
+sys-apps/attr      static-libs
+sys-apps/coreutils static
 sys-apps/findutils static
 sys-apps/grep      static
 sys-apps/lshw      static
