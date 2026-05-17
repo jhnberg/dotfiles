@@ -15,5 +15,6 @@ dev-build/make            test
 dev-build/ninja           test
 dev-lang/python           test
 sys-apps/systemd          test
+sys-apps/coreutils        test
 sys-apps/findutils        test
 sys-kernel/vanilla-kernel test
