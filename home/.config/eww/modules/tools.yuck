@@ -47,5 +47,5 @@
     (button
         :class "${class}"
         :tooltip "${name}"
-        :onclick `hyprctl dispatch submap ${smap}`
+        :onclick `hyprctl dispatch 'hl.dsp.submap "${smap}"'`
         (label :text "${icon}")))

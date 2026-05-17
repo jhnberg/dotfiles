@@ -1,0 +1,34 @@
+--[[
+   _   ___   ______  ____  _        _    _   _ ____  
+  | | | \ \ / /  _ \|  _ \| |      / \  | \ | |  _ \ 
+  | |_| |\ V /| |_) | |_) | |     / _ \ |  \| | | | |
+  |  _  | | | |  __/|  _ <| |___ / ___ \| |\  | |_| |
+  |_| |_| |_| |_|   |_| \_\_____/_/   \_\_| \_|____/
+  __  ____        ___ __   ___        _    _   _ ____  
+  \ \/ /\ \      / / \\ \ / / |      / \  | \ | |  _ \ 
+   \  /  \ \ /\ / / _ \\ V /| |     / _ \ |  \| | | | |
+   /  \   \ V  V / ___ \| | | |___ / ___ \| |\  | |_| |
+  /_/\_\   \_/\_/_/   \_\_| |_____/_/   \_\_| \_|____/ 
+--]]
+
+hl.env('XCURSOR_SIZE', 24)
+
+hl.config({
+    xwayland = {
+        enabled = true,
+        use_nearest_neighbor = true,
+        force_zero_scaling = true,
+    }
+})
+
+hl.window_rule({
+    match = {
+        class = 'xwaylandvideobridge'
+    },
+    no_initial_focus = true,
+    no_focus = true,
+    no_anim = true,
+    no_blur = true,
+    max_size = { 1, 1 },
+    opacity = 0,
+})
