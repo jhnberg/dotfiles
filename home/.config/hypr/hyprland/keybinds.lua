@@ -83,7 +83,7 @@ for _, id in ipairs(require('hyprland.variables').workspaces.persistent) do
     })
 end
 
-hl.bind('SUPER + S', hl.dsp.workspace.toggle_special { workspace = 'scratch' }, {
+hl.bind('SUPER + S', hl.dsp.workspace.toggle_special 'scratch', {
     description = 'Toggle the special scratch workspace'
 })
 
