@@ -8,10 +8,14 @@
 # during the install. This is useful on important packages to ensure
 # correctness.
 
+app-arch/zstd             test
 app-shells/zsh            test
 app-misc/fastfetch        test
+dev-build/automake        test
+dev-build/bmake           test
 dev-build/cmake           test
 dev-build/make            test
+dev-build/meson           test
 dev-build/ninja           test
 dev-lang/python           test
 sys-apps/systemd          test
