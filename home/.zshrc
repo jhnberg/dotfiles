@@ -48,6 +48,13 @@ function precmd() {
 
 # A string which will report the current VI mode
 VI_MODE=
+LF_MODE=
+
+if [[ -n $LF_LEVEL ]]
+then
+    # The LF_MODE will likely not change so we just set it once here.
+    LF_MODE="%F{7}[%f%F{3}lf%f%F{7}]%f"
+fi
 
 # TODO resizing the window duplicates some of the prompt.
 #      ideally a resize should redraw the entire prompt.
@@ -56,7 +63,7 @@ VI_MODE=
 # results in weird prompt redraws. Like wise %? also seem to mess with the
 # length calculations, so for now avoid it in the fill-line.
 PROMPT='
-$(fill-line "%F{7}(%f%F{6}%D %T%f%F{7})%f %F{4}%~%f ${vcs_info_msg_0_} " "%B${VI_MODE}%b")
+$(fill-line "%F{7}(%f%F{6}%D %T%f%F{7})%f %F{4}%~%f ${LF_MODE}${vcs_info_msg_0_} " "%B${VI_MODE}%b")
 %F{7}[%f%F{1}%n%f%F{7}@%f%F{6}%m%f%F{7}]%f %B%F{7}%%%f%b '
 
 # We set the RPROMPT dynamically and clear it in the zle-line-init and
