@@ -4,7 +4,10 @@
 #  / /_ ___) |  _  |  _ <| |___
 # /____|____/|_| |_|_| \_\\____|
 
-fastfetch
+if [[ -z $LF_LEVEL ]]
+then
+    fastfetch
+fi
 
 alias ls="ls --color=auto"
 
