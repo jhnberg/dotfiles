@@ -1,0 +1,27 @@
+#  _     _____ ____   ____
+# | |   |  ___|  _ \ / ___|
+# | |   | |_  | |_) | |
+# | |___|  _| |  _ <| |___
+# |_____|_|   |_| \_\\____|
+
+set hidden         true
+set icons          true
+set mouse          true
+set number         true
+set preview        true
+set relativenumber true
+set roundbox       true
+set watch          true
+
+map gb cd /boot
+map gd cd /dev
+map ge cd /etc
+map gm cd /mnt
+map gt cd /tmp
+map gu cd /usr
+map gv cd /var
+
+map d :push %mkdir<space>
+
+set shell     sh
+set shellopts '-eu'
