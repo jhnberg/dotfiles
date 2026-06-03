@@ -17,7 +17,10 @@ dev-build/cmake           test
 dev-build/make            test
 dev-build/meson           test
 dev-build/ninja           test
+dev-cpp/gtest             test
 dev-lang/python           test
+gui-libs/hyprtoolkit      test
+media-libs/mesa           test
 sys-apps/systemd          test
 sys-apps/coreutils        test
 sys-apps/findutils        test
