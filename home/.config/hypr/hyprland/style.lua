@@ -71,9 +71,9 @@ hl.animation({
 hl.animation({
     leaf = 'windowsMove',
     enabled = true,
-    speed = 4,
+    speed = 2,
     bezier = 'easeOutExpo',
-    style = 'popin 50%',
+    style = 'slide',
 })
 
 hl.animation({
