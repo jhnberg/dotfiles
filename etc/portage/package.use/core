@@ -7,6 +7,7 @@ app-crypt/gcr                 gtk
 app-emulation/libvirt         policykit
 app-emulation/qemu            gtk spice virgl
 app-emulation/virt-manager    gui policykit
+app-shells/bash               pgo
 app-text/xmlto                text
 app-text/poppler              cairo
 dev-lang/fpc                  source
