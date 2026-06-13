@@ -20,15 +20,18 @@ local modules = require('util/modules')
 local builtin = modules.include('telescope.builtin')
 
 if builtin then
+    vim.keymap.set('n', '<leader>fa',  builtin.autocommands, { desc = 'Telescope find autocommands' })
     vim.keymap.set('n', '<leader>ff',  builtin.find_files, { desc = 'Telescope find files' })
     vim.keymap.set('n', '<leader>fm',  builtin.marks, { desc = 'Telescope find marks' })
     vim.keymap.set('n', '<leader>fh',  builtin.help_tags, { desc = 'Telescope help tags' })
+    vim.keymap.set('n', '<leader>fH',  builtin.search_history, { desc = 'Telescope seach history' })
     vim.keymap.set('n', '<leader>fb',  builtin.buffers, { desc = 'Telescope find buffers' })
     vim.keymap.set('n', '<leader>fk',  builtin.keymaps, { desc = 'Telescope find keymaps' })
-    vim.keymap.set('n', '<leader>fg',  builtin.live_grep, { desc = 'Telescope find patterns' })
+    vim.keymap.set('n', '<leader>f/',  builtin.live_grep, { desc = 'Telescope find patterns' })
     vim.keymap.set('n', '<leader>fs',  builtin.spell_suggest, { desc = 'Telescope find spelling suggestions' })
-    vim.keymap.set('n', '<leader>fF',  builtin.oldfiles, { desc = 'Telescope find old files' })
+    vim.keymap.set('n', '<leader>fo',  builtin.oldfiles, { desc = 'Telescope find old files' })
     vim.keymap.set('n', '<leader>fM',  builtin.man_pages, { desc = 'Telescope find man pages' })
+    vim.keymap.set('n', '<leader>f ',  builtin.resume, { desc = 'Telescope resume last search' })
 
     -- LSP
     vim.keymap.set('n', '<leader>fS',  builtin.lsp_workspace_symbols, { desc = 'Telescope find symbols' })
