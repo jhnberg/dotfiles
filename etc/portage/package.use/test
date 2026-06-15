@@ -9,8 +9,8 @@
 # correctness.
 
 app-arch/zstd             test
-app-shells/zsh            test
 app-misc/fastfetch        test
+app-shells/zsh            test
 dev-build/automake        test
 dev-build/bmake           test
 dev-build/cmake           test
@@ -20,8 +20,14 @@ dev-build/ninja           test
 dev-cpp/gtest             test
 dev-lang/python           test
 gui-libs/hyprtoolkit      test
+gui-libs/hyprutil         test
+gui-libs/hyprwire         test
+llvm-core/clang           test
+llvm-core/llvm            test
 media-libs/mesa           test
-sys-apps/systemd          test
+media-video/pipewire      test
 sys-apps/coreutils        test
 sys-apps/findutils        test
+sys-apps/systemd          test
 sys-kernel/vanilla-kernel test
+www-client/firefox        test
