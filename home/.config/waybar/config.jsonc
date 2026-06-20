@@ -66,6 +66,7 @@
         "modules": [
             "idle_inhibitor",
             "custom/notifications",
+            "systemd-failed-units",
             "wireplumber",
             "network",
             "bluetooth",
