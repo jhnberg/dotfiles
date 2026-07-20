@@ -16,7 +16,6 @@ EMERGE_DEFAULT_OPTS="--ask --quiet --verbose --jobs=${JOBS_EMERGE} --load=${LAVG
 
 FEATURES="candy parallel-fetch parallel-install"
 
-ACCEPT_KEYWORDS="~amd64"
 ACCEPT_LICENSE="@FREE"
 
 DISTDIR="/var/cache/distfiles"
