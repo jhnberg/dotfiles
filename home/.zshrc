@@ -59,6 +59,11 @@ then
     LF_MODE="%F{7}[%f%F{3}lf%f%F{7}]%f"
 fi
 
+# The last date/time to be displayed. We update this variable in the
+# zle-line-init function. This means that the time does not change if the
+# prompt is re-drawn e.g. on a terminal resize.
+STABLE_TIME=
+
 # TODO resizing the window duplicates some of the prompt.
 #      ideally a resize should redraw the entire prompt.
 #
@@ -66,7 +71,7 @@ fi
 # results in weird prompt redraws. Like wise %? also seem to mess with the
 # length calculations, so for now avoid it in the fill-line.
 PROMPT='
-$(fill-line "%F{7}(%f%F{6}%D %T%f%F{7})%f %F{4}%~%f ${LF_MODE}${vcs_info_msg_0_} " "%B${VI_MODE}%b")
+$(fill-line "%F{7}(%f%F{6}${STABLE_TIME}%f%F{7})%f %F{4}%~%f ${LF_MODE}${vcs_info_msg_0_} " "%B${VI_MODE}%b")
 %F{7}[%f%F{1}%n%f%F{7}@%f%F{6}%m%f%F{7}]%f %B%F{7}%%%f%b '
 
 # We set the RPROMPT dynamically and clear it in the zle-line-init and
@@ -159,6 +164,8 @@ function zle-line-init {
     # Only show the errno if there was an actual failed previous
     # command.
     RPROMPT='%0(?..%B%F{7}<%f${ERRNO_MSG}%F{7}>%f%b)'
+    STABLE_TIME=$(print -P '%T %D')
+
     vi-keymap-select
     zle reset-prompt
 }
