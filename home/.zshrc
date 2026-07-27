@@ -164,7 +164,7 @@ function zle-line-init {
     # Only show the errno if there was an actual failed previous
     # command.
     RPROMPT='%0(?..%B%F{7}<%f${ERRNO_MSG}%F{7}>%f%b)'
-    STABLE_TIME=$(print -P '%T %D')
+    STABLE_TIME=$(print -P '%D %T')
 
     vi-keymap-select
     zle reset-prompt
