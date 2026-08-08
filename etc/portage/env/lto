@@ -1,22 +1,38 @@
+#  ____   ___  ____ _____  _    ____ _____
+# |  _ \ / _ \|  _ \_   _|/ \  / ___| ____|
+# | |_) | | | | |_) || | / _ \| |  _|  _|
+# |  __/| |_| |  _ < | |/ ___ \ |_| | |___
+# |_|    \___/|_| \_\|_/_/   \_\____|_____|
+#  _____ _   ___     __
+# | ____| \ | \ \   / /
+# |  _| |  \| |\ \ / /
+# | |___| |\  | \ V /
+# |_____|_| \_|  \_/
 #  _   _____ ___
 # | | |_   _/ _ \
 # | |   | || | | |
 # | |___| || |_| |
 # |_____|_| \___/
 #
-# This file if for building packages with Link Time Optimization using LLVN and
+# This file if for building packages with Link Time Optimization using LLVM and
 # GCC toolchains. Though they both accept the -flto argument the LTO, for LLVM
 # -flto=thin or -flto=full may be specified to choose between thin or full LTO.
 # But since this file is intended to support both, we just pass the -flto
-# flag without specifying.
+# flag without specifying. We also ensure that we enable some additional
+# warning flags during the compilation.
 #
 # The LLVM and GCC LTO is not compatible, so it is a bad idea to build static
 # with LTO if both GCC and LLVM consume them.
+#
+# The Gentoo wiki provides some official infomrmation on using LTO in builds.
+#
+# Wiki: https://wiki.gentoo.org/wiki/LTO
 
 LTO_FLAGS=" -flto "
-CFLAGS="${CFLAGS} ${LTO_FLAGS}"
-CXXFLAGS="${CXXFLAGS} ${LTO_FLAGS}"
-FCFLAGS="${FCLAGS} ${LTO_FLAGS}"
-FFLAGS="${FFLAGS} ${LTO_FLAGS}"
-LDFLAGS="${LDFLAGS} ${LTO_FLAGS} -Wl,-O2 "
+WARN_FLAGS= "-Werror=odr -Werror=strict-aliasing"
+CFLAGS="${CFLAGS} ${WARN_FLAGS} ${LTO_FLAGS}"
+CXXFLAGS="${CXXFLAGS} ${WARN_FLAGS} ${LTO_FLAGS}"
+FCFLAGS="${FCLAGS} ${WARN_FLAGS}  ${LTO_FLAGS}"
+FFLAGS="${FFLAGS} ${WARN_FLAGS}  ${LTO_FLAGS}"
+LDFLAGS="${LDFLAGS} ${WARN_FLAGS} ${LTO_FLAGS} -Wl,-O2 "
 RUSTFLAGS="${RUSTFLAGS} -C opt-level=3"
