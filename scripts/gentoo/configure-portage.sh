@@ -33,6 +33,7 @@ FILES=("env/*"
        "package.env"
        "package.license"
        "package.use/**"
+       "package.accept_keywords/**"
        "patches/**/*/*.patch"
       )
 
