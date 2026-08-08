@@ -38,8 +38,7 @@ FILES=("env/*"
       )
 
 # The M4 files which will generate configuration files in PORTAGE_DIR.
-M4=("make.conf.m4"
-    "package.use/cpuflags.m4"
+M4=("package.use/cpuflags.m4"
     "package.use/videocards.m4"
    )
 
@@ -66,6 +65,12 @@ do
     echo "[M4]   ${path%.m4}"
     m4 m4/${path} > ${PORTAGE_DIR}/${path%.m4}
 done
+
+if ! [[ -f $PORTAGE_DIR/make.conf ]]
+then
+    echo "[COPY] make.conf"
+    cp templates/make.conf $PORTAGE_DIR/
+fi
 
 # The enabled repos should are automatically detected.
 #
