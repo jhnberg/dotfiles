@@ -11,22 +11,23 @@ RUN mkdir -p /etc/portage/repos.conf
 COPY ./etc/portage/repos.conf/ /etc/portage/repos.conf/
 RUN emerge -v --sync $(portageq get_repos / | xargs -n1 | grep -vxF gentoo | xargs)
 COPY ./etc/portage/package.accept_keywords/ /etc/portage/package.accept_keywords/
-RUN MAKEOPTS="-j$(nproc)"                         \
-    emerge -qv app-admin/sudo                     \
-               app-editors/neovim                 \
-               app-shells/zsh                     \
-               app-shells/gentoo-zsh-completions  \
-               app-shells/zsh-autosuggestions     \
-               app-shells/zsh-syntax-highlighting \
-               app-shells/zsh-completions         \
-               app-misc/fastfetch                 \
-               app-misc/tmux                      \
-               app-portage/eix                    \
-               sys-apps/ripgrep                   \
-               sys-process/htop                   \
-               sys-process/btop                   \
-               x11-misc/xdg-user-dirs             \
-               x11-themes/catppuccin-btop
+COPY ./templates/make.conf /etc/portage/
+RUN MAKEOPTS="-j$(nproc)"                                               \
+    emerge -qv --ignore-default-opts app-admin/sudo                     \
+                                     app-editors/neovim                 \
+                                     app-shells/zsh                     \
+                                     app-shells/gentoo-zsh-completions  \
+                                     app-shells/zsh-autosuggestions     \
+                                     app-shells/zsh-syntax-highlighting \
+                                     app-shells/zsh-completions         \
+                                     app-misc/fastfetch                 \
+                                     app-misc/tmux                      \
+                                     app-portage/eix                    \
+                                     sys-apps/ripgrep                   \
+                                     sys-process/htop                   \
+                                     sys-process/btop                   \
+                                     x11-misc/xdg-user-dirs             \
+                                     x11-themes/catppuccin-btop
 
 # Create a user with a home directory and sudo permissions.
 ARG USERNAME=docker

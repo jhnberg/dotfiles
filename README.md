@@ -10,6 +10,9 @@ A minimal docker container can be built using:
 docker build -t sandbox .
 ```
 
+**NOTE:** You can edit the make.conf file before building the container to
+customise the image.
+
 Run the created docker container using:
 
 ```
