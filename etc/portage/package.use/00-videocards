@@ -1,0 +1,35 @@
+#  ____   ___  ____ _____  _    ____ _____
+# |  _ \ / _ \|  _ \_   _|/ \  / ___| ____|
+# | |_) | | | | |_) || | / _ \| |  _|  _|
+# |  __/| |_| |  _ < | |/ ___ \ |_| | |___
+# |_|    \___/|_| \_\|_/_/   \_\____|_____|
+#  ____   _    ____ _  __    _    ____ _____  _   _ ____  _____
+# |  _ \ / \  / ___| |/ /   / \  / ___| ____|| | | / ___|| ____|
+# | |_) / _ \| |   | ' /   / _ \| |  _|  _|  | | | \___ \|  _|
+# |  __/ ___ \ |___| . \  / ___ \ |_| | |___ | |_| |___) | |___
+# |_| /_/   \_\____|_|\_\/_/   \_\____|_____(_)___/|____/|_____|
+# __     _____ ____  _____ ___   ____    _    ____  ____  ____
+# \ \   / /_ _|  _ \| ____/ _ \ / ___|  / \  |  _ \|  _ \/ ___|
+#  \ \ / / | || | | |  _|| | | | |     / _ \ | |_) | | | \___ \
+#   \ V /  | || |_| | |__| |_| | |___ / ___ \|  _ <| |_| |___) |
+#    \_/  |___|____/|_____\___/ \____/_/   \_\_| \_\____/|____/
+#
+# This files is intended to set the VIDEO_CARDS use flags. The official gentoo
+# wiki provides some guidance on how to set the video cards depending on the
+# graphic card(s) in use. As a rule of thumb:
+#
+# | GPU    | FLAGS           |
+# | ------ | --------------- |
+# | AMD    | amdgpu radeonsi |
+# | Nvidia | nouveau         |
+# | Intel  | intel           |
+# | QEMU   | virtgl          |
+#
+# Wiki: https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base
+#
+# NOTE: From experiance, installing only for amdgpu + radeonsi seems to have an
+#       issue where libdrm fails to build without the radeon option. In this
+#       case, the we just add radon to x11-libs/libdrm. But there may be other
+#       quirks such as these.
+
+*/* VIDEO_CARDS: -* amdgpu radeonsi radeon intel nouveau virgl

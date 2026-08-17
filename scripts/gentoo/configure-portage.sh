@@ -51,12 +51,9 @@ COPY_FILES=("env/*"
 # These files are only copies if they do not already exist, with the intention
 # that they should be edited to configure the system.
 TEMPLATE_FILES=("make.conf"
+                "package.use/00-cpuflags"
+                "package.use/00-videocards"
                )
-
-# The M4 files which will generate configuration files in PORTAGE_DIR.
-M4=("package.use/cpuflags.m4"
-    "package.use/videocards.m4"
-   )
 
 for path in ${DIRS[@]}
 do
@@ -83,12 +80,6 @@ do
         echo "[TEMPLATE] ${file#etc/portage/}"
         cp --update=none ${file} ${PORTAGE_DIR}/${file#etc/portage/}
     done
-done
-
-for path in ${M4[@]}
-do
-    echo "[M4]   ${path%.m4}"
-    m4 m4/${path} > ${PORTAGE_DIR}/${path%.m4}
 done
 
 # The enabled repos should are automatically detected.
