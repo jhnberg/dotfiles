@@ -26,26 +26,32 @@ DIRS=("env/"
       "patches/**/*/"
      )
 
-# The files in PORTAGE_DIR which will be copied.
-FILES=("env/*"
-       "repos.conf/eselect-repo.conf"
-       "sets/**"
-       "package.env"
-       "package.license"
-       "package.use/10-core"
-       "package.use/20-static"
-       "package.use/20-test"
-       "package.use/20-xorg"
-       "package.use/30-misc"
-       "package.use/50-llvm"
-       "package.use/50-lua"
-       "package.use/50-python"
-       "package.use/50-qemu"
-       "package.use/50-ruby"
-       "package.use/50-steam"
-       "package.accept_keywords/**"
-       "patches/**/*/*.patch"
-      )
+# The files in PORTAGE_DIR which will be copied. These files are copied on each
+# invocation
+COPY_FILES=("env/*"
+            "repos.conf/eselect-repo.conf"
+            "sets/**"
+            "package.env"
+            "package.license"
+            "package.use/10-core"
+            "package.use/20-static"
+            "package.use/20-test"
+            "package.use/20-xorg"
+            "package.use/30-misc"
+            "package.use/50-llvm"
+            "package.use/50-lua"
+            "package.use/50-python"
+            "package.use/50-qemu"
+            "package.use/50-ruby"
+            "package.use/50-steam"
+            "package.accept_keywords/**"
+            "patches/**/*/*.patch"
+           )
+
+# These files are only copies if they do not already exist, with the intention
+# that they should be edited to configure the system.
+TEMPLATE_FILES=("make.conf"
+               )
 
 # The M4 files which will generate configuration files in PORTAGE_DIR.
 M4=("package.use/cpuflags.m4"
@@ -61,7 +67,7 @@ do
     done
 done
 
-for path in ${FILES[@]}
+for path in ${COPY_FILES[@]}
 do
     for file in etc/portage/${path[@]}
     do
@@ -70,17 +76,20 @@ do
     done
 done
 
+for path in ${TEMPLATE_FILES[@]}
+do
+    for file in etc/portage/${path[@]}
+    do
+        echo "[TEMPLATE] ${file#etc/portage/}"
+        cp --update=none ${file} ${PORTAGE_DIR}/${file#etc/portage/}
+    done
+done
+
 for path in ${M4[@]}
 do
     echo "[M4]   ${path%.m4}"
     m4 m4/${path} > ${PORTAGE_DIR}/${path%.m4}
 done
-
-if ! [[ -f $PORTAGE_DIR/make.conf ]]
-then
-    echo "[COPY] make.conf"
-    cp templates/make.conf $PORTAGE_DIR/
-fi
 
 # The enabled repos should are automatically detected.
 #
