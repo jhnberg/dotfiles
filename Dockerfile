@@ -11,7 +11,9 @@ RUN mkdir -p /etc/portage/repos.conf
 COPY ./etc/portage/repos.conf/ /etc/portage/repos.conf/
 RUN emerge -v --sync $(portageq get_repos / | xargs -n1 | grep -vxF gentoo | xargs)
 COPY ./etc/portage/package.accept_keywords/ /etc/portage/package.accept_keywords/
-COPY ./templates/make.conf /etc/portage/
+COPY ./etc/portage/make.conf /etc/portage/
+COPY ./etc/portage/package.use/00-cpuflags /etc/portage/package.use/
+COPY ./etc/portage/package.use/00-videocards /etc/portage/package.use/
 RUN MAKEOPTS="-j$(nproc)"                                               \
     emerge -qv --ignore-default-opts app-admin/sudo                     \
                                      app-editors/neovim                 \

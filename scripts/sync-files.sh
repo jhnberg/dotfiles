@@ -28,8 +28,8 @@ case $TARGET_PATH in
           --exclude='/etc/portage/make.profile'               \
           --exclude='/etc/portage/binrepos.conf/*'            \
           --exclude='/etc/portage/package.use/.*'             \
-          --exclude='/etc/portage/package.use/cpuflags'       \
-          --exclude='/etc/portage/package.use/videocards'     \
+          --exclude='/etc/portage/package.use/00-cpuflags'       \
+          --exclude='/etc/portage/package.use/00-videocards'     \
           --exclude='/etc/portage/postsync.d/*'               \
           --exclude='/etc/portage/savedconfig/sys-firmware/*' \
           --exclude='/etc/portage/savedconfig/sys-kernel/*'   \
