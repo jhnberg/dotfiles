@@ -44,6 +44,7 @@ COPY_FILES=("env/*"
             "package.use/50-qemu"
             "package.use/50-ruby"
             "package.use/50-steam"
+            "package.mask/**"
             "package.accept_keywords/**"
             "patches/**/*/*.patch"
            )
