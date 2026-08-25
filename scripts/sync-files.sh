@@ -35,6 +35,15 @@ case $TARGET_PATH in
           --exclude='/etc/portage/savedconfig/sys-kernel/*'   \
           "${TARGET_PATH}" "${PWD}/"
     ;;
+"/var/db/repos/local/"*)
+    rsync -avA --delete "${TARGET_PATH}" "${PWD}/pkgs"
+    ;;
+"/var/db/repos/local")
+    # This is the same as above but for the whole directory, and we also add
+    # the / at the end to only sync the files inside the local directory and
+    # not the directory itself.
+    rsync -avA --delete "${TARGET_PATH}/" "${PWD}/pkgs"
+    ;;
 *)
     echo "Unsupported path!" >> /dev/stderr
     exit 1
