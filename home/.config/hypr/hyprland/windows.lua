@@ -11,29 +11,29 @@
      \_/\_/  |___|_| \_|____/ \___/  \_/\_/  |____/
 --]]
 
-hl.window_rule({
+hl.window_rule {
     match = {
         class = 'Alacritty'
     },
     tag = '+terminal',
-})
+}
 
-hl.window_rule({
+hl.window_rule {
     match = {
         class = '^(Bitwarden)$',
     },
     tag = '+private',
-})
+}
 
-hl.window_rule({
+hl.window_rule {
     name = 'no-screenshare-private-windows',
     match = {
         tag = 'private'
     },
     no_screen_share = true,
-})
+}
 
-hl.window_rule({
+hl.window_rule {
     name = 'disable-alpha-terminal-on-fs-special-ws',
     match = {
         tag = 'terminal',
@@ -43,9 +43,9 @@ hl.window_rule({
     opacity = 1.0,
     opaque = true,
     force_rgbx = true,
-})
+}
 
-hl.window_rule({
+hl.window_rule {
     name = 'gw2-no-decorations',
     match = {
         title = 'Guild Wars 2',
@@ -53,4 +53,4 @@ hl.window_rule({
     },
     no_blur = true,
     decorate = false,
-})
+}

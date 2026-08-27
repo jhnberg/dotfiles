@@ -15,12 +15,12 @@
 hl.env('HYPRCURSOR_THEME', 'Catppuccin Mocha Dark')
 hl.env('HYPRCURSOR_SIZE', 28)
 
-hl.monitor({
+hl.monitor {
     output = '',
     mode = 'preferred',
     position = 'auto',
     scale = 'auto',
-})
+}
 
 hl.curve('linear', {
     type = 'bezier',
@@ -38,80 +38,80 @@ hl.curve('easeOutExpo', {
     }
 })
 
-hl.animation({
+hl.animation {
     leaf = 'global',
     enabled = true,
     speed = 1,
     bezier = 'default'
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'windows',
     enabled = true,
     speed = 1,
     bezier = 'default',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'windowsIn',
     enabled = true,
     speed = 2,
     bezier = 'easeOutExpo',
     style = 'popin 50%',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'windowsOut',
     enabled = true,
     speed = 2,
     bezier = 'easeOutExpo',
     style = 'popin 50%',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'windowsMove',
     enabled = true,
     speed = 2,
     bezier = 'easeOutExpo',
     style = 'slide',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'layers',
     enabled = true,
     speed = 1,
     bezier = 'default'
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'layersIn',
     enabled = true,
     speed = 2,
     bezier = 'easeOutExpo',
     style = 'fade',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'layersOut',
     enabled = true,
     speed = 2,
     bezier = 'easeOutExpo',
     style = 'fade',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'fade',
     enabled = true,
     speed = 1,
     bezier = 'default',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'fadeIn',
     enabled = true,
     speed = 1,
     bezier = 'easeOutExpo',
-})
+}
 
 hl.animation({
     leaf = 'fadeOut',
@@ -120,116 +120,116 @@ hl.animation({
     bezier = 'easeOutExpo',
 })
 
-hl.animation({
+hl.animation {
     leaf = 'fadeSwitch',
     enabled = true,
     speed = 1,
     bezier = 'easeOutExpo',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'fadeShadow',
     enabled = true,
     speed = 1,
     bezier = 'easeOutExpo',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'fadeDim',
     enabled = true,
     speed = 1,
     bezier = 'easeOutExpo',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'fadeDim',
     enabled = true,
     speed = 1,
     bezier = 'default',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'fadeLayersIn',
     enabled = true,
     speed = 1,
     bezier = 'easeOutExpo',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'fadeLayersOut',
     enabled = true,
     speed = 1,
     bezier = 'easeOutExpo',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'border',
     enabled = true,
     speed = 1,
     bezier = 'default',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'borderangle',
     enabled = true,
     speed = 20,
     bezier = 'linear',
     style = 'loop',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'workspaces',
     enabled = true,
     speed = 1,
     bezier = 'default',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'workspacesIn',
     enabled = true,
     speed = 2,
     bezier = 'easeOutExpo',
     style = 'slidefade 50%'
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'workspacesOut',
     enabled = true,
     speed = 4,
     bezier = 'easeOutExpo',
     style = 'slidefade 50%'
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'specialWorkspace',
     enabled = true,
     speed = 1,
     bezier = 'default',
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'specialWorkspaceIn',
     enabled = true,
     speed = 4,
     bezier = 'easeOutExpo',
     style = 'slidefadevert 50%'
-})
+}
 
-hl.animation({
+hl.animation {
     leaf = 'specialWorkspaceOut',
     enabled = true,
     speed = 4,
     bezier = 'easeOutExpo',
     style = 'slidefadevert 50%'
-})
+}
 
-hl.layer_rule({
+hl.layer_rule{
     name = 'rofi-animation',
     match = {
         namespace = 'rofi'
     },
     animation = 'slide',
-})
+}
 
 hl.layer_rule({
     name = 'logout-animation',
@@ -271,7 +271,7 @@ hl.window_rule({
     border_color = colours.overlay0,
 })
 
-hl.config({
+hl.config {
     animations = {
         enabled = true,
     },
@@ -328,4 +328,4 @@ hl.config({
         hide_on_touch = false,
         use_cpu_buffer = 2,
     }
-})
+}

@@ -13,13 +13,13 @@
 
 hl.env('XCURSOR_SIZE', 24)
 
-hl.config({
+hl.config {
     xwayland = {
         enabled = true,
         use_nearest_neighbor = true,
         force_zero_scaling = true,
     }
-})
+}
 
 hl.window_rule({
     match = {

@@ -14,26 +14,26 @@
 local workspaces = require('hyprland.variables').workspaces
 
 for _, id in ipairs(workspaces.persistent) do
-    hl.workspace_rule({
+    hl.workspace_rule {
         workspace = string.format('%i', id),
         persistent = true,
-    })
+    }
 end
 
-hl.workspace_rule({
+hl.workspace_rule {
     workspace = 's[true]',
     layout = 'dwindle',
-})
+}
 
 -- Adjust the gaps for workspaces with a single window
-hl.workspace_rule({
+hl.workspace_rule {
     workspace = 'w[tv1]',
     gaps_out = 8,
     gaps_in = 0,
-})
+}
 
-hl.workspace_rule({
+hl.workspace_rule {
     workspace = 'f[true]',
     gaps_out = 8,
     gaps_in = 0,
-})
+}
