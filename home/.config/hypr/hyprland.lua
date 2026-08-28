@@ -50,17 +50,6 @@ hl.config {
         no_update_news  = false,
         no_donation_nag = false,
     },
-    dwindle = {
-        force_split                  = 0,
-        preserve_split               = true,
-        smart_split                  = false,
-        smart_resizing               = true,
-        permanent_direction_override = false,
-        special_scale_factor         = 1.0,
-        split_width_multiplier       = 1.0,
-        default_split_ratio          = 1.0,
-        split_bias                   = 0,
-    },
     group = {
         auto_group                           = true,
         insert_after_current                 = true,
