@@ -64,8 +64,6 @@
     "group/system": {
         "orientation": "inherit",
         "modules": [
-            "idle_inhibitor",
-            "custom/notifications",
             "systemd-failed-units",
             "wireplumber",
             "network",
@@ -82,11 +80,9 @@
         "~/.config/waybar/modules/bluetooth.jsonc",
         "~/.config/waybar/modules/clock.jsonc",
         "~/.config/waybar/modules/control.jsonc",
-        "~/.config/waybar/modules/idle_inhibitor.jsonc",
         "~/.config/waybar/modules/language.jsonc",
         "~/.config/waybar/modules/logo.jsonc",
         "~/.config/waybar/modules/network.jsonc",
-        "~/.config/waybar/modules/notifications.jsonc",
         "~/.config/waybar/modules/overview.jsonc",
         "~/.config/waybar/modules/systemd-failed-units.jsonc",
         "~/.config/waybar/modules/tray.jsonc",

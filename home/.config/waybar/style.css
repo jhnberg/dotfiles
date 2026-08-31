@@ -142,17 +142,6 @@ tooltip {
 }
 
 /*
- * Idle inhibitor.
- */
-#idle_inhibitor {
-    color : @catppuccin-text;
-}
-
-#idle_inhibitor:hover {
-    box-shadow : inset 0px -3px @catppuccin-subtext0;
-}
-
-/*
  * Language.
  */
 #language {
