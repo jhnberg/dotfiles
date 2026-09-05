@@ -28,6 +28,7 @@ app-misc/figlet
 app-misc/sl
 app-misc/tmux
 app-portage/eix
+app-portage/gentoolkit
 app-shells/zsh
 app-shells/gentoo-zsh-completions
 app-shells/zsh-autosuggestions
