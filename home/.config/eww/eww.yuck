@@ -13,34 +13,31 @@
         :x "16px"
         :y "16px"
         :width "360px"
-        :height "480px"
-        :anchor "top right")
+        :height "90%"
+        :anchor "top left")
     (eventbox
-        :class "control-panel"
         :hexpand true
-        :orientation "v"
         :onhoverlost `${EWW_CMD} close control-panel`
         (box
+            :class "control-panel"
             :hexpand true
             :space-evenly false
             :orientation "v"
-            (settings)
-            (player)
-            (sysstats))))
-
-(defwindow sidebar-menu
-    :monitor 0
-    :exclusive true
-    :stacking "fg"
-    :geometry (geometry
-        :x "8px"
-        :y "0px"
-        :width "32px"
-        :height "90%"
-        :anchor "left center")
-    (box
-        :orientation "v"
-        (tools
-            :valign "start")
-        (shortcuts
-            :valign "end")))
+            (settings
+                :valign "start")
+            (scroll
+                :vexpand true
+                :hscroll false
+                :vscroll true
+                (box
+                    :hexpand true
+                    :vexpand true
+                    :space-evenly false
+                    :orientation "v"
+                    (calendar)
+                    (player)
+                    (sysstats)))
+            (apps
+                :valign "end")
+            (tools
+                :valign "end"))))

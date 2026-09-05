@@ -29,16 +29,15 @@
      * the module I want in the centre gets pushed off centre.
      */
     "modules-left": [
-        "custom/logo",
+        "custom/control",
         "group/current"
     ],
     "modules-center": [
         "custom/overview"
     ],
     "modules-right": [
-        "group/environ",
         "group/system",
-        "custom/control"
+        "group/environ"
     ],
 
     /*
@@ -81,7 +80,6 @@
         "~/.config/waybar/modules/clock.jsonc",
         "~/.config/waybar/modules/control.jsonc",
         "~/.config/waybar/modules/language.jsonc",
-        "~/.config/waybar/modules/logo.jsonc",
         "~/.config/waybar/modules/network.jsonc",
         "~/.config/waybar/modules/overview.jsonc",
         "~/.config/waybar/modules/systemd-failed-units.jsonc",

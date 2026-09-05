@@ -1,9 +1,8 @@
-(defwidget shortcuts [?valign]
+(defwidget apps []
     (box
         :class "shortcuts"
-        :valign "${valign}"
-        :space-evenly false
-        :orientation "v"
+        :space-evenly true
+        :orientation "h"
         (_applauncher
             :class "terminal"
             :name "Terminal"

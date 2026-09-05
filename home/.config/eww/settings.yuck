@@ -5,14 +5,32 @@
         :orientation "v"
         :space-evenly false
         (box
-            :halign "start"
+            :halign "fill"
+            :hexpand true
             :orientation "h"
-            :space-evenly false
-            (button
-                :class "notify-btn"
-                :halign "center"
-                :valign "center"
-                :onclick "makoctl mode -t silent"
-                (label :text "")))
+            :space-evenly true
+            (_idlelock_btn)
+            (_logout_btn))
         (volume)))
 
+(defwidget _idlelock_btn []
+    (button
+        :class "idlelockbtn"
+        :tooltip "${IDLE_LOCKED == 'locked' ? 'Enable' : 'Disable'} screen lock on idle"
+        :onclick "scripts/idlelock.py --toggle"
+        (label :text "${IDLE_LOCKED == 'locked' ? '' : ''}")))
+
+(defwidget _logout_btn []
+    (button
+        :class "logoutbtn"
+        :tooltip "Logout"
+        :onclick "~/.local/bin/power-menu.sh"
+        (label :text "")))
+
+(deflisten IDLE_LOCKED
+    `scripts/idlelock.py --watch`)
+
+(defpoll MUTED_NOTIFICATIONS
+    :initial false
+    :interval "120s"
+    `makoctl mode | grep -F silent && echo true || false`)

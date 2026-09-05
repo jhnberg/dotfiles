@@ -1,6 +1,0 @@
-{
-    "custom/logo": {
-        "format": "",
-        "on-click": "eww open --toggle sidebar-menu"
-    }
-}

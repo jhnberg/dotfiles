@@ -18,6 +18,8 @@ app-emulation/virt-manager
 app-misc/corectrl
 app-misc/piper
 app-office/libreoffice
+dev-python/dbus-python
+dev-python/watchdog
 gnome-base/gnome-keyring
 gnome-base/librsvg
 games-util/gamemode

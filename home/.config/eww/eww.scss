@@ -45,15 +45,40 @@ label {
     box-shadow : none;
 }
 
-.control-panel {
-    padding : 16px 16px 16px 16px;
+calendar {
+    all        : unset;
+    color      : $catppuccin-subtext0;
+    border     : none;
+    box-shadow : none;
+
+    &:selected {
+        color            : $catppuccin-crust;
+        background-color : $catppuccin-teal;
+        border-radius    : 8px;
+    }
 }
 
-.notify-btn {
-    background    : transparent;
-    label {
-        color     : $catppuccin-yellow;
-    }
+.control-panel {
+    padding : 8px 8px 8px 8px;
+}
+
+button {
+  &.idlelockbtn {
+      background-color : $catppuccin-surface1;
+      margin          : 10px;
+      label {
+          font-size: 1.4em;
+          color : $catppuccin-sky;
+      }
+  }
+
+  &.logoutbtn {
+      background-color : $catppuccin-surface1;
+      margin          : 10px;
+      label {
+          color : $catppuccin-red;
+      }
+  }
 }
 
 .volume {
@@ -206,10 +231,6 @@ label {
 }
 
 .tools {
-    .logout label {
-        color : $catppuccin-red;
-    }
-
     .screenshot label {
         color : $catppuccin-teal;
     }

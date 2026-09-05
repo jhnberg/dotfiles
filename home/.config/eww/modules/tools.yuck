@@ -1,9 +1,7 @@
 (defwidget tools []
     (box
         :class "tools"
-        :valign "start"
-        :orientation "v"
-        (_logout)
+        :orientation "h"
         (_screenshot)
         (_colourpicker)
         (_submap
@@ -21,13 +19,6 @@
             :name "Kill"
             :icon ""
             :smap "kill")))
-
-(defwidget _logout []
-    (button
-        :class "logout"
-        :tooltip "Logout"
-        :onclick '~/.local/bin/power-menu.sh'
-        (label :text "")))
 
 (defwidget _screenshot []
     (button
