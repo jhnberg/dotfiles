@@ -22,5 +22,8 @@
 #
 # Wiki: https://wiki.gentoo.org/wiki//etc/portage/package.mask
 
-=www-client/firefox-154.0.1
+=net-misc/wget-1.25.0-r3
 =www-client/firefox-154.0
+=www-client/firefox-154.0.1
+=www-client/firefox-155.0
+=www-client/firefox-155.0.1
