@@ -22,6 +22,7 @@
     "else"
     "enum"
     "explicit"
+    "extern"
     "for"
     "friend"
     "goto"
