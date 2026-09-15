@@ -58,8 +58,9 @@
  * The main waybar component.
  */
 #waybar {
-    background    : transparent;
-    border-bottom : none;
+    background    : @catppuccin-base;
+    border-bottom : solid 2px @catppuccin-surface0;
+    box-shadow    : none;
 }
 
 /*
@@ -77,11 +78,15 @@
 .modules-left,
 .modules-center,
 .modules-right {
-    background    : @catppuccin-base;
-    border-radius : 8px;
-    border        : solid 2px @catppuccin-surface0;
-    box-shadow    : none;
-    padding       : 2px 0px 2px 0px;
+    padding : 8px 0px 8px 0px;
+}
+
+.modules-left {
+    margin : 0px 0px 0px 16px;
+}
+
+.modules-right {
+    margin : 0px 16px 0px 0px;
 }
 
 /*
