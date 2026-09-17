@@ -46,6 +46,7 @@
     "try"
     "typedef"
     "typename"
+    "union"
     "using"
     "virtual"
     "volatile"
