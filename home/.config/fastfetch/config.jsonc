@@ -11,7 +11,7 @@
             "right": 4
         },
         "printRemaining": false,
-        "recache": false,
+        "cache": false,
         "position":  "left"
     },
     "display": {
