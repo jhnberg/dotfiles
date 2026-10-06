@@ -66,6 +66,10 @@ end
 
 require("theme/catppuccin").mocha.apply()
 
+-- Tree Sitter keybinds
+vim.keymap.set('n', '<leader>ti', ':InspectTree<CR>', { desc = 'Inspect the treesitter tree' })
+vim.keymap.set('n', '<leader>th', ':Inspect<CR>', { desc = 'Inspect the treesitter highlighting' })
+
 -- Git keybinds
 vim.keymap.set('n', '<leader>gb', ':Git blame<CR>', { desc = 'Open git blame' })
 vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', { desc = 'Open NeoGit' })
