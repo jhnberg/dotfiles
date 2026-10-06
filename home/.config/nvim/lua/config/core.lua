@@ -65,3 +65,7 @@ if smear_cursor then
 end
 
 require("theme/catppuccin").mocha.apply()
+
+-- Git keybinds
+vim.keymap.set('n', '<leader>gb', ':Git blame<CR>', { desc = 'Open git blame' })
+vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', { desc = 'Open NeoGit' })

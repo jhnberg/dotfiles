@@ -38,4 +38,8 @@ vim.pack.add({
         src = "https://github.com/sphamba/smear-cursor.nvim",
         version = "v0.6.0"
     },
+    {
+        src = "https://github.com/NeogitOrg/neogit.git",
+        version = "v3.0.0"
+    },
 })
