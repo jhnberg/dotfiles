@@ -59,6 +59,7 @@ llvm-core/lldb
 net-misc/chrony
 net-misc/networkmanager
 sys-apps/dtc
+sys-apps/fd
 sys-apps/lshw
 sys-apps/ripgrep
 sys-devel/gcc
