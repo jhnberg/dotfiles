@@ -18,7 +18,6 @@
 
 vim.g.mapleader      = " "
 vim.g.maplocalleader = " "
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 vim.opt.title          = true
 vim.opt.titlestring    = "%t -- NeoVIM"
@@ -65,6 +64,8 @@ if smear_cursor then
 end
 
 require("theme/catppuccin").mocha.apply()
+
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Telescope keybinds
 vim.keymap.set('n', '<leader>fa', require('telescope.builtin').autocommands, { desc = 'Telescope find autocommands' })
