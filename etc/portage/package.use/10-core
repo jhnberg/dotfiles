@@ -52,6 +52,6 @@ sys-kernel/installkernel      dracut grub
 sys-kernel/linux-firmware     savedconfig
 sys-kernel/vanilla-kernel     savedconfig
 sys-libs/zlib                 minizip
-www-client/firefox            hwaccel pgo
+www-client/firefox            hwaccel jpegxl openh264 pgo system-pipewire wasm-sandbox wifi
 x11-libs/gdk-pixbuf           jpeg
 x11-themes/catppuccin-cursors -* mocha
