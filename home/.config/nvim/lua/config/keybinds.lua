@@ -38,9 +38,26 @@ vim.keymap.set('n', '<leader>fl',  require('telescope.builtin').git_commits, { d
 vim.keymap.set('n', '<leader>fB',  require('telescope.builtin').git_branches, { desc = 'Telescope find branches' })
 
 -- Tree Sitter keybinds
-vim.keymap.set('n', '<leader>ti', ':InspectTree<CR>', { desc = 'Inspect the treesitter tree' })
-vim.keymap.set('n', '<leader>th', ':Inspect<CR>', { desc = 'Inspect the treesitter highlighting' })
+vim.keymap.set('n', '<leader>t', ':InspectTree<CR>', { desc = 'Inspect the treesitter tree' })
+vim.keymap.set('n', '<leader>i', ':Inspect<CR>', { desc = 'Inspect the treesitter highlighting' })
 
 -- Git keybinds
-vim.keymap.set('n', '<leader>gb', ':Gitsigns blame<CR>', { desc = 'Open git blame' })
 vim.keymap.set('n', '<leader>gg', ':Neogit<CR>', { desc = 'Open NeoGit' })
+
+local gitsigns = require 'gitsigns'
+
+vim.keymap.set('n', '<leader>gb', gitsigns.blame, {
+    desc = 'Open git blame'
+})
+
+vim.keymap.set('n', '<leader>ghs', gitsigns.stage_hunk, {
+    desc = 'Stage a hunk',
+})
+
+vim.keymap.set('n', '<leader>ghr', gitsigns.reset_hunk, {
+    desc = 'Reset a hunk',
+})
+
+vim.keymap.set('n', '<leader>ghp', gitsigns.preview_hunk, {
+    desc = 'Preview a hunk'
+})
