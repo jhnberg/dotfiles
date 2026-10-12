@@ -1,9 +1,19 @@
 {
   "plugins": {
+    "diffview.nvim": {
+      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+      "src": "https://github.com/sindrets/diffview.nvim.git",
+      "version": "'main'"
+    },
     "gentoo-syntax": {
       "rev": "1b3a81ec62e5c843245dc431be0fe072add7eca8",
       "src": "https://github.com/gentoo/gentoo-syntax",
       "version": "'v16'"
+    },
+    "gitsigns.nvim": {
+      "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
+      "src": "https://github.com/lewis6991/gitsigns.nvim.git",
+      "version": "'v2.1.0'"
     },
     "neogit": {
       "rev": "e106a39a8a37a9420f374545c876f8b52baf1c80",

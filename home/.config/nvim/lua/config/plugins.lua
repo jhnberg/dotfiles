@@ -42,4 +42,12 @@ vim.pack.add({
         src = "https://github.com/NeogitOrg/neogit.git",
         version = "v3.0.0"
     },
+    {
+        src = "https://github.com/sindrets/diffview.nvim.git",
+        version = "main"
+    },
+    {
+        src = "https://github.com/lewis6991/gitsigns.nvim.git",
+        version = "v2.1.0"
+    },
 })
