@@ -18,6 +18,10 @@
 
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
+    desc = "Exit terminal mode"
+})
+
 -- Telescope keybinds
 vim.keymap.set('n', '<leader>fa', require('telescope.builtin').autocommands, { desc = 'Telescope find autocommands' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Telescope find files' })
