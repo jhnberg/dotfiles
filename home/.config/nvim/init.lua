@@ -12,9 +12,5 @@
  |_____\___/_/   \_(_)___|_| \_|___| |_|
 ]]--
 
-require("config/plugins")
-
-require("config/core")
-require("config/lsp")
-require("config/treesitter")
-require("config/statusline")
+require 'plugins' -- Sourcing the early to make  sure the are available
+require 'config'
