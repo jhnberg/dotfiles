@@ -46,3 +46,15 @@ vim.pack.add({
         version = "v2.1.0"
     },
 })
+
+-- Automatically remove any plugins which are inactive. This is for the plugins
+-- which are not mentioned in the vim.pack.add().
+local inactive_pkgs = vim.iter(vim.pack.get())
+    :filter(function (pkg) return not pkg.active end)
+    :map(function (pkg) return pkg.spec.name end)
+    :totable()
+
+if next(inactive_pkgs) ~= nil
+then
+    vim.pack.del(inactive_pkgs)
+end
