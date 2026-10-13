@@ -20,6 +20,11 @@
 vim.lsp.config('*', {
     capabilities = {
         textDocument = {
+            completion = {
+                completionItem = {
+                    snippetSupport = true
+                }
+            },
             semanticTokens = {
                 multilineTokenSupport = true,
             }
