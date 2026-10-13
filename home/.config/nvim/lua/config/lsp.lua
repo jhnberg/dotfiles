@@ -16,9 +16,6 @@
    \____\___/|_| \_|_|   |___\____|
 ]]--
 
-vim.g.mapleader      = " "
-
-
 -- Generic configuration common across every LSP
 vim.lsp.config('*', {
     on_attach = function (client, bufnr)
