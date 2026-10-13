@@ -28,7 +28,7 @@ vim.lsp.config('*', {
 local lsp_config = {
     clangd = {
         cmd = { 'clangd' },
-        filetypes = { 'c','cc', 'cxx', 'cpp', 'h', 'hh', 'hxx', 'hpp' , 's'},
+        filetypes = { 'c', 'cpp' },
         root_markers = { '.clangd', 'compile_command.json' },
         capabilities = {
             textDocument = {
