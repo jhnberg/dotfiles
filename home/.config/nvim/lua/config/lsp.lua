@@ -18,6 +18,13 @@
 
 -- Generic configuration common across every LSP
 vim.lsp.config('*', {
+    capabilities = {
+        textDocument = {
+            semanticTokens = {
+                multilineTokenSupport = true,
+            }
+        }
+    },
     on_attach = function (client, bufnr)
         vim.lsp.completion.enable(true, client.id, bufnr, {
             autotrigger = true
@@ -30,13 +37,6 @@ local lsp_config = {
         cmd = { 'clangd' },
         filetypes = { 'c', 'cpp' },
         root_markers = { '.clangd', 'compile_commands.json' },
-        capabilities = {
-            textDocument = {
-                semanticTokens = {
-                    multilineTokenSupport = true,
-                }
-            }
-        }
     },
     luals = {
         cmd = { 'lua-language-server' },
