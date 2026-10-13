@@ -41,6 +41,30 @@ vim.keymap.set('n', '<leader>fr', require('telescope.builtin').lsp_references, {
 vim.keymap.set('n', '<leader>fl',  require('telescope.builtin').git_commits, { desc = 'Telescope find commits' })
 vim.keymap.set('n', '<leader>fB',  require('telescope.builtin').git_branches, { desc = 'Telescope find branches' })
 
+vim.keymap.set('n', 'grr', require('telescope.builtin').lsp_references, {
+    desc = 'Find references',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', 'grt', require('telescope.builtin').lsp_definitions, {
+    desc = 'Find definitions',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', 'gri', require('telescope.builtin').lsp_implementations, {
+    desc = 'Find implementations',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', 'gO', require('telescope.builtin').lsp_document_symbols, {
+    desc = 'Find document symbols',
+    nowait = true,
+    noremap = true,
+})
+
 -- Tree Sitter keybinds
 vim.keymap.set('n', '<leader>t', ':InspectTree<CR>', { desc = 'Inspect the treesitter tree' })
 vim.keymap.set('n', '<leader>i', ':Inspect<CR>', { desc = 'Inspect the treesitter highlighting' })
