@@ -70,6 +70,10 @@ if smear_cursor then
     })
 end
 
+require('neogit').setup {
+   kind = 'floating',
+}
+
 require("theme/catppuccin").mocha.apply()
 
 require 'config/keybinds'
