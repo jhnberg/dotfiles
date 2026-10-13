@@ -30,6 +30,18 @@ vim.opt.spelllang = {
     "sv"
 }
 
+-- Disable spellchecking on terminals, otherwise we have some pretty weird
+-- looking text.
+vim.api.nvim_create_autocmd('TermOpen', {
+    group = vim.api.nvim_create_augroup('TerminalSpellCheck', {
+        clear = true
+    }),
+    pattern = "*",
+    callback = function()
+        vim.opt_local.spell = false
+    end,
+})
+
 vim.opt.timeout     = false
 vim.opt.timeoutlen  = 0
 vim.opt.ttimeoutlen = 0
