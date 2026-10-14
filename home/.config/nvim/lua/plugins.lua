@@ -41,6 +41,10 @@ vim.pack.add({
         src = "https://github.com/lewis6991/gitsigns.nvim.git",
         version = "v2.1.0"
     },
+    {
+        src = 'https://github.com/folke/which-key.nvim.git',
+        version = 'v3.17.0',
+    },
 })
 
 -- Automatically remove any plugins which are inactive. This is for the plugins
