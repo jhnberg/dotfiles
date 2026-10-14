@@ -77,14 +77,14 @@ vim.keymap.set('n', '<leader>gb', gitsigns.blame, {
     desc = 'Open git blame'
 })
 
-vim.keymap.set('n', '<leader>ghs', gitsigns.stage_hunk, {
+vim.keymap.set('n', '<leader>gs', gitsigns.stage_hunk, {
     desc = 'Stage a hunk',
 })
 
-vim.keymap.set('n', '<leader>ghr', gitsigns.reset_hunk, {
+vim.keymap.set('n', '<leader>gR', gitsigns.reset_hunk, {
     desc = 'Reset a hunk',
 })
 
-vim.keymap.set('n', '<leader>ghp', gitsigns.preview_hunk, {
+vim.keymap.set('n', '<leader>gh', gitsigns.preview_hunk, {
     desc = 'Preview a hunk'
 })
