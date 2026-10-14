@@ -23,16 +23,12 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
 })
 
 -- Telescope keybinds
-vim.keymap.set('n', '<leader>fa', require('telescope.builtin').autocommands, { desc = 'Telescope find autocommands' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = 'Telescope find old files' })
-vim.keymap.set('n', '<leader>fm', require('telescope.builtin').marks, { desc = 'Telescope find marks' })
-vim.keymap.set('n', '<leader>f?', require('telescope.builtin').help_tags, { desc = 'Telescope help tags' })
 vim.keymap.set('n', '<leader>fH', require('telescope.builtin').search_history, { desc = 'Telescope seach history' })
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Telescope find buffers' })
-vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, { desc = 'Telescope find keymaps' })
 vim.keymap.set('n', '<leader>/', require('telescope.builtin').live_grep, { desc = 'Telescope find patterns' })
-vim.keymap.set('n', '<leader>fM', require('telescope.builtin').man_pages, { desc = 'Telescope find man pages' })
+vim.keymap.set('n', '<leader>fm', require('telescope.builtin').marks, { desc = 'Telescope find marks' })
 vim.keymap.set('n', '<leader>f ', require('telescope.builtin').resume, { desc = 'Telescope resume last search' })
 vim.keymap.set('n', '<leader>fS', require('telescope.builtin').lsp_workspace_symbols, { desc = 'Telescope find symbols' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Telescope find diagnostics' })
@@ -67,6 +63,32 @@ vim.keymap.set('n', 'gri', require('telescope.builtin').lsp_implementations, {
 
 vim.keymap.set('n', 'gO', require('telescope.builtin').lsp_document_symbols, {
     desc = 'Find document symbols',
+    nowait = true,
+    noremap = true,
+})
+
+
+-- Help
+vim.keymap.set('n', '<leader>h?', require('telescope.builtin').help_tags, {
+    desc = 'Help tags',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>ha', require('telescope.builtin').autocommands, {
+    desc = 'Autocommands',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>hk', require('telescope.builtin').keymaps, {
+    desc = 'Keymaps',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fm', require('telescope.builtin').man_pages, {
+    desc = 'Man pages',
     nowait = true,
     noremap = true,
 })
