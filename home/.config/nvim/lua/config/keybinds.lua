@@ -32,13 +32,20 @@ vim.keymap.set('n', '<leader>fH', require('telescope.builtin').search_history, {
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Telescope find buffers' })
 vim.keymap.set('n', '<leader>fk', require('telescope.builtin').keymaps, { desc = 'Telescope find keymaps' })
 vim.keymap.set('n', '<leader>/', require('telescope.builtin').live_grep, { desc = 'Telescope find patterns' })
-vim.keymap.set('n', '<leader>fs', require('telescope.builtin').spell_suggest, { desc = 'Telescope find spelling suggestions' })
 vim.keymap.set('n', '<leader>fM', require('telescope.builtin').man_pages, { desc = 'Telescope find man pages' })
 vim.keymap.set('n', '<leader>f ', require('telescope.builtin').resume, { desc = 'Telescope resume last search' })
 vim.keymap.set('n', '<leader>fS', require('telescope.builtin').lsp_workspace_symbols, { desc = 'Telescope find symbols' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Telescope find diagnostics' })
 vim.keymap.set('n', '<leader>fl',  require('telescope.builtin').git_commits, { desc = 'Telescope find commits' })
 vim.keymap.set('n', '<leader>fB',  require('telescope.builtin').git_branches, { desc = 'Telescope find branches' })
+
+-- TODO the "z=" keybind also takes a count which selects the item from the
+--      the list of spelling suggestions.
+vim.keymap.set('n', 'z=', require('telescope.builtin').spell_suggest, {
+    desc = 'Spelling suggestions',
+    nowait = true,
+    noremap = true,
+})
 
 vim.keymap.set('n', 'grr', require('telescope.builtin').lsp_references, {
     desc = 'Find references',
