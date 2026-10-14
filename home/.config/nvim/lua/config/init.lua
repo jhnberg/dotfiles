@@ -55,29 +55,12 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
-local modules = require('util/modules')
-local smear_cursor = modules.include('smear_cursor')
-
-if smear_cursor then
-    smear_cursor.setup({
-        stiffness                      = 0.95,
-        stiffness_insert_mode          = 1.0,
-        trailing_stiffness             = 0.4,
-        trailing_stiffness_insert_mode = 0.9,
-        damping                        = 0.99,
-        damping_insert_mode            = 0.99,
-        distance_stop_animation        = 0.1,
-    })
-end
-
-require('neogit').setup {
-   kind = 'floating',
-}
-
 require("theme/catppuccin").mocha.apply()
 
 require 'config/keybinds'
 require 'config/lsp'
 require 'config/treesitter'
 require 'config/statusline'
+require 'config.neogit'
 require 'config.which-key'
+require 'config.smear_cursor'
