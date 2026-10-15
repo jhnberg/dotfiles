@@ -35,6 +35,11 @@ which_key.setup({
     show_help = true,
     show_keys = true,
     triggers = { '<leader>' },
+    icons = {
+        breadcrumb = '',
+        separator  = '->',
+        mappings   = false,
+    },
 })
 
 -- This is just making searching for keybinds simpler as we get a rough idea
