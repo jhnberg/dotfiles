@@ -50,7 +50,7 @@ local catppuccin_mocha = {
 local function derive_catppuccin_scheme(colours)
     return {
         general = {
-            normal          = { ctermbg = 'none', bg = 'none' },
+            default         = { ctermbg = 'none', bg = 'none' },
             status_line     = { fg = colours.text, bg = colours.surface2 },
             visual_mode     = { fg = colours.rosewater, bg = colours.overlay2 },
             linenr          = { fg = colours.overlay1 },
@@ -59,6 +59,7 @@ local function derive_catppuccin_scheme(colours)
             search_active   = { fg = colours.surface0, bg = colours.teal },
         },
         border = {
+            active   = { fg = colours.lavender, bg = 'none' },
             inactive = { fg = colours.overlay0 },
         },
         popup = {

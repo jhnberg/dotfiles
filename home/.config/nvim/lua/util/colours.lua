@@ -16,11 +16,9 @@
    \___/  |_| |___|_____|___| |_|   |_|
 --]]
 
-
 local function populate(scheme)
     local highlighting = {
         -- General
-        ['Normal']                 = scheme.general.normal,
         ['Visual']                 = scheme.general.visual_mode,
         ['StatusLine']             = scheme.general.status_line,
         ['WinSeparator']           = scheme.border.inactive,
@@ -28,6 +26,10 @@ local function populate(scheme)
         ['Search']                 = scheme.general.search_inactive,
         ['LineNr']                 = scheme.general.linenr,
         ['CursorLineNr']           = scheme.general.linenr_active,
+
+        ['Normal']                 = scheme.general.default,
+        ['NormalFloat']            = scheme.general.default,
+        ['FloatBorder']            = scheme.border.active,
 
         -- Popup
         ['Pmenu']                  = scheme.popup.deselected,
