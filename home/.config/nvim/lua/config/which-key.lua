@@ -36,3 +36,13 @@ which_key.setup({
     show_keys = true,
     triggers = { '<leader>' },
 })
+
+-- This is just making searching for keybinds simpler as we get a rough idea
+-- about what they contain. But this is also repeating the setup for the
+-- keymaps. Ideally this could be deduplicated.
+--
+-- TODO: Avoid duplicating the keymaps.
+which_key.add {
+    { '<leader>g', group = 'Git' },
+    { '<leader>h', group = 'Help' },
+}

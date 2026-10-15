@@ -94,14 +94,14 @@ vim.keymap.set('n', '<leader>hH', funcs.help_highlights, {
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>gg', funcs.open_neogit, {
-    desc = 'Open NeoGit',
+vim.keymap.set('n', '<leader>gg', funcs.git_client, {
+    desc = 'Git client',
     nowait = true,
     noremap = true,
 })
 
 vim.keymap.set('n', '<leader>gb', funcs.blame, {
-    desc = 'Open git blame',
+    desc = 'Blame',
     nowait = true,
     noremap = true,
 })

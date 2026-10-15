@@ -218,7 +218,7 @@ M.preview_hunk = function ()
     end
 end
 
-M.open_neogit = function ()
+M.git_client = function ()
     if neogit then
         neogit.open()
     else
