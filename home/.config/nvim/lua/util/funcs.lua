@@ -40,21 +40,34 @@ local neogit = require_or_nil 'neogit'
 
 local M = {}
 
-M.live_grep = function ()
-    if telescope then
-        telescope.live_grep()
-    else
-        vim.notify('live grep not available', vim.log.levels.ERROR)
-    end
-end
+M.general = {
+    live_grep = function ()
+        if telescope then
+            telescope.live_grep()
+        else
+            vim.notify('live grep not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.search_resume = function ()
-    if telescope then
-        telescope.resume()
-    else
-        vim.notify('search resume not available', vim.log.levels.ERROR)
-    end
-end
+    search_resume = function ()
+        if telescope then
+            telescope.resume()
+        else
+            vim.notify('search resume not available', vim.log.levels.ERROR)
+        end
+    end,
+
+    -- TODO the "z=" keybind also takes a count which selects the item from the
+    --      the list of spelling suggestions.
+    spell_suggestion = function()
+        if telescope then
+            telescope.spell_suggest()
+        else
+            vim.cmd('normal! z=')
+        end
+    end,
+}
+
 
 M.search_diagnostics = function ()
     if telescope then
@@ -64,21 +77,23 @@ M.search_diagnostics = function ()
     end
 end
 
-M.find_files = function ()
-    if telescope then
-        telescope.find_files()
-    else
-        vim.notify('find files not available', vim.log.levels.ERROR)
-    end
-end
+M.find = {
+    files = function ()
+        if telescope then
+            telescope.find_files()
+        else
+            vim.notify('find files not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.find_recent_files = function ()
-    if telescope then
-        telescope.oldfiles()
-    else
-        vim.notify('find recent files not available', vim.log.levels.ERROR)
-    end
-end
+    recent_files = function ()
+        if telescope then
+            telescope.oldfiles()
+        else
+            vim.notify('find recent files not available', vim.log.levels.ERROR)
+        end
+    end,
+}
 
 M.buffers = function ()
     if telescope then
@@ -88,31 +103,23 @@ M.buffers = function ()
     end
 end
 
--- TODO the "z=" keybind also takes a count which selects the item from the
---      the list of spelling suggestions.
-M.spell_suggestion = function()
-    if telescope then
-        telescope.spell_suggest()
-    else
-        vim.cmd('normal! z=')
-    end
-end
+M.history = {
+    command = function ()
+        if telescope then
+            telescope.command_history()
+        else
+            vim.cmd('normal! q/')
+        end
+    end,
 
-M.history_command = function ()
-    if telescope then
-        telescope.command_history()
-    else
-        vim.cmd('normal! q/')
-    end
-end
-
-M.history_search_fwd = function ()
-    if telescope then
-        telescope.search_history()
-    else
-        vim.cmd('normal! q/')
-    end
-end
+    search_fwd = function ()
+        if telescope then
+            telescope.search_history()
+        else
+            vim.cmd('normal! q/')
+        end
+    end,
+}
 
 M.lsp_references = function ()
     if telescope then
@@ -146,84 +153,88 @@ M.lsp_document_symbols = function ()
     end
 end
 
-M.help_autocommands = function ()
-    if telescope then
-        telescope.autocommands()
-    else
-        vim.notify('auto commands help not available', vim.log.levels.ERROR)
-    end
-end
+M.help = {
+    autocommands = function ()
+        if telescope then
+            telescope.autocommands()
+        else
+            vim.notify('auto commands help not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.help_man_pages = function ()
-    if telescope then
-        telescope.man_pages()
-    else
-        vim.notify('man pages help not available', vim.log.levels.ERROR)
-    end
-end
+    man_pages = function ()
+        if telescope then
+            telescope.man_pages()
+        else
+            vim.notify('man pages help not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.help_highlights = function ()
-    if telescope then
-        telescope.highlights()
-    else
-        vim.notify('highlights help not available', vim.log.levels.ERROR)
-    end
-end
+    highlights = function ()
+        if telescope then
+            telescope.highlights()
+        else
+            vim.notify('highlights help not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.help_keymaps = function ()
-    if telescope then
-        telescope.keymaps()
-    else
-        vim.notify('keymaps help not available', vim.log.levels.ERROR)
-    end
-end
+    keymaps = function ()
+        if telescope then
+            telescope.keymaps()
+        else
+            vim.notify('keymaps help not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.help_tags = function ()
-    if telescope then
-        telescope.help_tags()
-    else
-        vim.notify('help tags not available', vim.log.levels.ERROR)
-    end
-end
+    help_tags = function ()
+        if telescope then
+            telescope.help_tags()
+        else
+            vim.notify('help tags not available', vim.log.levels.ERROR)
+        end
+    end,
+}
 
-M.blame = function ()
-    if gitsigns then
-        gitsigns.blame()
-    else
-        vim.notify('blame not available', vim.log.levels.ERROR)
-    end
-end
+M.git = {
+    blame = function ()
+        if gitsigns then
+            gitsigns.blame()
+        else
+            vim.notify('blame not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.stage_hunk = function ()
-    if gitsigns then
-        gitsigns.stage_hunk()
-    else
-        vim.notify('stage hunk not available', vim.log.levels.ERROR)
-    end
-end
+    stage_hunk = function ()
+        if gitsigns then
+            gitsigns.stage_hunk()
+        else
+            vim.notify('stage hunk not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.reset_hunk = function ()
-    if gitsigns then
-        gitsigns.reset_hunk()
-    else
-        vim.notify('reset hunk not available', vim.log.levels.ERROR)
-    end
-end
+    reset_hunk = function ()
+        if gitsigns then
+            gitsigns.reset_hunk()
+        else
+            vim.notify('reset hunk not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.preview_hunk = function ()
-    if gitsigns then
-        gitsigns.preview_hunk()
-    else
-        vim.notify('preview hunk not available', vim.log.levels.ERROR)
-    end
-end
+    preview_hunk = function ()
+        if gitsigns then
+            gitsigns.preview_hunk()
+        else
+            vim.notify('preview hunk not available', vim.log.levels.ERROR)
+        end
+    end,
 
-M.git_client = function ()
-    if neogit then
-        neogit.open()
-    else
-        vim.notify('Neogit not available', vim.log.levels.ERROR)
-    end
-end
+    dashboard = function ()
+        if neogit then
+            neogit.open()
+        else
+            vim.notify('Neogit not available', vim.log.levels.ERROR)
+        end
+    end,
+}
 
 return M

@@ -25,22 +25,22 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
 })
 
 -- Override default keymaps but keep their intention to have them be familiar
-vim.keymap.set('n', 'z=', funcs.spell_suggestion)
+vim.keymap.set('n', 'z=', funcs.general.spell_suggestion)
 vim.keymap.set('n', 'grr', funcs.lsp_references)
 vim.keymap.set('n', 'grt', funcs.lsp_definitions)
 vim.keymap.set('n', 'gri', funcs.lsp_implementations)
 vim.keymap.set('n', 'gO', funcs.lsp_document_symbols)
-vim.keymap.set('n', 'q:', funcs.history_command)
-vim.keymap.set('n', 'q/', funcs.history_search_fwd)
+vim.keymap.set('n', 'q:', funcs.history.command)
+vim.keymap.set('n', 'q/', funcs.history.search_fwd)
 
 -- Custom keymaps
-vim.keymap.set('n', '<leader>/', funcs.live_grep, {
+vim.keymap.set('n', '<leader>/', funcs.general.live_grep, {
     desc = 'Live grep',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>\'', funcs.search_resume, {
+vim.keymap.set('n', '<leader>\'', funcs.general.search_resume, {
     desc = 'Resume searching',
     nowait = true,
     noremap = true,
@@ -52,13 +52,13 @@ vim.keymap.set('n', '<leader>bb', funcs.buffers, {
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>ff', funcs.find_files, {
+vim.keymap.set('n', '<leader>ff', funcs.find.files, {
     desc = 'Find files',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>fr', funcs.find_recent_files, {
+vim.keymap.set('n', '<leader>fr', funcs.find.recent_files, {
     desc = 'Find recent files',
     nowait = true,
     noremap = true,
@@ -70,55 +70,55 @@ vim.keymap.set('n', '<leader>h?', require('telescope.builtin').help_tags, {
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>ha', funcs.help_autocommands, {
+vim.keymap.set('n', '<leader>ha', funcs.help.autocommands, {
     desc = 'Autocommands',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>hk', funcs.help_keymaps, {
+vim.keymap.set('n', '<leader>hk', funcs.help.keymaps, {
     desc = 'Keymaps',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>hm', funcs.help_man_pages, {
+vim.keymap.set('n', '<leader>hm', funcs.help.man_pages, {
     desc = 'Man pages',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>hH', funcs.help_highlights, {
+vim.keymap.set('n', '<leader>hH', funcs.help.highlights, {
     desc = 'Highlights',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>gg', funcs.git_client, {
-    desc = 'Git client',
+vim.keymap.set('n', '<leader>gg', funcs.git.dashboard, {
+    desc = 'Dashboard',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>gb', funcs.blame, {
+vim.keymap.set('n', '<leader>gb', funcs.git.blame, {
     desc = 'Blame',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>gs', funcs.stage_hunk, {
+vim.keymap.set('n', '<leader>gs', funcs.git.stage_hunk, {
     desc = 'Stage a hunk',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>gR', funcs.reset_hunk, {
+vim.keymap.set('n', '<leader>gR', funcs.git.reset_hunk, {
     desc = 'Reset a hunk',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>gh', funcs.preview_hunk, {
+vim.keymap.set('n', '<leader>gh', funcs.git.preview_hunk, {
     desc = 'Preview a hunk',
     nowait = true,
     noremap = true,
