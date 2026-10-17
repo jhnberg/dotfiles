@@ -78,9 +78,46 @@ M.general = {
 
 M.search_diagnostics = coalesce(telescope and telescope.diagnostics, error 'search diagnostics')
 
+local home_dir      = vim.env['HOME']
+local desktop_dir   = vim.env['XDG_DESKTOP_DIR'] or vim.fs.joinpath(home_dir, 'Desktop')
+local documents_dir = vim.env['XDG_DESKTOP_DIR'] or vim.fs.joinpath(home_dir, 'Documents')
+local downloads_dir = vim.env['XDG_DOWNLOAD_DIR'] or vim.fs.joinpath(home_dir, 'Downloads')
+local music_dir     = vim.env['XDG_MUSIC_DIR'] or vim.fs.joinpath(home_dir, 'Music')
+local pictures_dir  = vim.env['XDG_PICTURES_DIR'] or vim.fs.joinpath(home_dir, 'Pictures')
+local projects_dir  = vim.env['XDG_PROJECTS_DIR'] or vim.fs.joinpath(home_dir, 'Projects')
+local public_dir    = vim.env['XDG_PUBLICSHARE_DIR'] or vim.fs.joinpath(home_dir, 'Public')
+local templates_dir = vim.env['XDG_TEMPLATES_DIR'] or vim.fs.joinpath(home_dir, 'Templates')
+local videos_dir    = vim.env['XDG_VIDEOS_DIR'] or vim.fs.joinpath(home_dir, 'Videos')
+
+local files = {
+    find_in_cwd        = telescope and telescope.find_files,
+    find_recent = telescope and telescope.oldfiles,
+    find_in_dir = function (path)
+        if not telescope or not path or not vim.fn.isdirectory(path) then
+            return nil
+        end
+
+        return function ()
+            telescope.find_files {
+                cwd = path
+            }
+        end
+    end
+}
+
 M.find = {
-    files        = coalesce(telescope and telescope.find_files, error 'find files'),
-    recent_files = coalesce(telescope and telescope.oldfiles, error 'recent files')
+    files        = coalesce(files.find_in_cwd, error 'find files'),
+    recent_files = coalesce(files.find_recent, error 'recent files'),
+    in_home      = coalesce(files.find_in_dir(home_dir), error 'find home files'),
+    in_desktop   = coalesce(files.find_in_dir(desktop_dir), error 'find desktop files'),
+    in_documents = coalesce(files.find_in_dir(documents_dir), error 'find documents files'),
+    in_downloads = coalesce(files.find_in_dir(downloads_dir), error 'find downloads files'),
+    in_pictures  = coalesce(files.find_in_dir(pictures_dir), error 'find pictures files'),
+    in_projects  = coalesce(files.find_in_dir(projects_dir), error 'find projects files'),
+    in_public    = coalesce(files.find_in_dir(public_dir), error 'find public files'),
+    in_templates = coalesce(files.find_in_dir(templates_dir), error 'find templates files'),
+    in_videos    = coalesce(files.find_in_dir(videos_dir), error 'find videos files'),
+    in_music     = coalesce(files.find_in_dir(music_dir), error 'find music files'),
 }
 
 M.buffers = coalesce(telescope and telescope.buffers, error 'buffers')
@@ -102,12 +139,20 @@ M.help = {
     help_tags    = coalesce(telescope and telescope.help_tags, error 'help tags')
 }
 
+local git = {
+    blame        = gitsigns and gitsigns.blame,
+    dashboard    = neogit and neogit.open,
+    preview_hunk = gitsigns and gitsigns.preview_hunk,
+    reset_hunk   = gitsigns and gitsigns.reset_hunk,
+    stage_hunk   = gitsigns and gitsigns.stage_hunk,
+}
+
 M.git = {
-    blame        = coalesce(gitsigns and gitsigns.blame, error 'blame'),
-    stage_hunk   = coalesce(gitsigns and gitsigns.stage_hunk, error 'stage hunk'),
-    reset_hunk   = coalesce(gitsigns and gitsigns.reset_hunk, error 'reset hunk'),
-    preview_hunk = coalesce(gitsigns and gitsigns.preview_hunk, error 'preview hunk'),
-    dashboard    = coalesce(neogit and neogit.open, error 'neogit')
+    blame        = coalesce(git.blame, error 'git blame'),
+    dashboard    = coalesce(git.dashboard, error 'git dashboard'),
+    preview_hunk = coalesce(git.preview_hunk, error 'git preview hunk'),
+    reset_hunk   = coalesce(git.reset_hunk, error 'git reset hunk'),
+    stage_hunk   = coalesce(git.stage_hunk, error 'git stage hunk'),
 }
 
 return M

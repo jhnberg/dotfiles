@@ -64,6 +64,66 @@ vim.keymap.set('n', '<leader>fr', funcs.find.recent_files, {
     noremap = true,
 })
 
+vim.keymap.set('n', '<leader>fH', funcs.find.in_home, {
+    desc = 'Find Documents files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fD', funcs.find.in_desktop, {
+    desc = 'Find Desktop files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fO', funcs.find.in_documents, {
+    desc = 'Find files in Documents',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fT', funcs.find.in_templates, {
+    desc = 'Find Templates files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fW', funcs.find.in_downloads, {
+    desc = 'Find Downloads files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fS', funcs.find.in_public, {
+    desc = 'Find Public files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fM', funcs.find.in_music, {
+    desc = 'Find Music files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fV', funcs.find.in_videos, {
+    desc = 'Find Videos files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fI', funcs.find.in_pictures, {
+    desc = 'Find Pictures files',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>fP', funcs.find.in_projects, {
+    desc = 'Find Projects files',
+    nowait = true,
+    noremap = true,
+})
+
 vim.keymap.set('n', '<leader>h?', require('telescope.builtin').help_tags, {
     desc = 'Help tags',
     nowait = true,
