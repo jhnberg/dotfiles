@@ -38,203 +38,76 @@ local telescope = require_or_nil 'telescope.builtin'
 local gitsigns = require_or_nil 'gitsigns'
 local neogit = require_or_nil 'neogit'
 
+local function coalesce(...)
+    for _, fn in ipairs { ... } do
+        if type(fn) == 'function' then
+            return fn
+        end
+    end
+
+    return nil
+end
+
+local function cmd(command)
+    return function ()
+        vim.cmd(command)
+    end
+end
+
+local function error(message)
+    return function ()
+        vim.notify(message .. ' not available', vim.log.leves.ERROR)
+    end
+end
+
 local M = {}
 
 M.general = {
-    live_grep = function ()
-        if telescope then
-            telescope.live_grep()
-        else
-            vim.notify('live grep not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    search_resume = function ()
-        if telescope then
-            telescope.resume()
-        else
-            vim.notify('search resume not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    -- TODO the "z=" keybind also takes a count which selects the item from the
-    --      the list of spelling suggestions.
-    spell_suggestion = function()
+    live_grep        = coalesce(telescope and telescope.live_grep, error 'live_grep'),
+    search_resume    = coalesce(telescope and telescope.resume, error 'search resume'),
+    spell_suggestion =  function ()
+        -- TODO the "z=" keybind also takes a count which selects the item from the
+        --      the list of spelling suggestions.
         if telescope then
             telescope.spell_suggest()
         else
             vim.cmd('normal! z=')
         end
-    end,
+    end
 }
 
-
-M.search_diagnostics = function ()
-    if telescope then
-        telescope.diagnostics()
-    else
-        vim.notify('search diagnostics not available', vim.log.levels.ERROR)
-    end
-end
+M.search_diagnostics = coalesce(telescope and telescope.diagnostics, error 'search diagnostics')
 
 M.find = {
-    files = function ()
-        if telescope then
-            telescope.find_files()
-        else
-            vim.notify('find files not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    recent_files = function ()
-        if telescope then
-            telescope.oldfiles()
-        else
-            vim.notify('find recent files not available', vim.log.levels.ERROR)
-        end
-    end,
+    files        = coalesce(telescope and telescope.find_files, error 'find files'),
+    recent_files = coalesce(telescope and telescope.oldfiles, error 'recent files')
 }
 
-M.buffers = function ()
-    if telescope then
-        telescope.buffers()
-    else
-        vim.notify('buffers not available', vim.log.levels.ERROR)
-    end
-end
-
+M.buffers = coalesce(telescope and telescope.buffers, error 'buffers')
 M.history = {
-    command = function ()
-        if telescope then
-            telescope.command_history()
-        else
-            vim.cmd('normal! q/')
-        end
-    end,
-
-    search_fwd = function ()
-        if telescope then
-            telescope.search_history()
-        else
-            vim.cmd('normal! q/')
-        end
-    end,
+    command    = coalesce(telescope and telescope.command_history, cmd 'normal! q/'),
+    search_fwd = coalesce(telescope and telescope.search_history, cmd 'normal! q/'),
 }
 
-M.lsp_references = function ()
-    if telescope then
-        telescope.lsp_references()
-    else
-        vim.lsp.buf.references()
-    end
-end
-
-M.lsp_definitions = function ()
-    if  telescope then
-        telescope.lsp_definitions()
-    else
-        vim.lsp.buf.type_definition()
-    end
-end
-
-M.lsp_implementations = function ()
-    if telescope then
-        telescope.lsp_implementations()
-    else
-        vim.lsp.buf.implementation()
-    end
-end
-
-M.lsp_document_symbols = function ()
-    if telescope then
-        telescope.lsp_document_symbols()
-    else
-        vim.lsp.buf.document_symbols()
-    end
-end
+M.lsp_references       = coalesce(telescope and telescope.lsp_references, vim.lsp.buf.references)
+M.lsp_definitions      = coalesce(telescope and telescope.lsp_definitions, vim.lsp.buf.type_definition)
+M.lsp_implementations  = coalesce(telescope and telescope.lsp_implementations, vim.lsp.buf.implementation)
+M.lsp_document_symbols = coalesce(telescope and telescope.lsp_document_symbols, vim.lsp.buf.document_symbols)
 
 M.help = {
-    autocommands = function ()
-        if telescope then
-            telescope.autocommands()
-        else
-            vim.notify('auto commands help not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    man_pages = function ()
-        if telescope then
-            telescope.man_pages()
-        else
-            vim.notify('man pages help not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    highlights = function ()
-        if telescope then
-            telescope.highlights()
-        else
-            vim.notify('highlights help not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    keymaps = function ()
-        if telescope then
-            telescope.keymaps()
-        else
-            vim.notify('keymaps help not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    help_tags = function ()
-        if telescope then
-            telescope.help_tags()
-        else
-            vim.notify('help tags not available', vim.log.levels.ERROR)
-        end
-    end,
+    autocommands = coalesce(telescope and telescope.autocommands, error 'autocommands'),
+    man_pages    = coalesce(telescope and telescope.man_pages, error 'man pages'),
+    highlights   = coalesce(telescope and telescope.highlights, error 'highlights'),
+    keymaps      = coalesce(telescope and telescope.keymaps, error 'keymaps'),
+    help_tags    = coalesce(telescope and telescope.help_tags, error 'help tags')
 }
 
 M.git = {
-    blame = function ()
-        if gitsigns then
-            gitsigns.blame()
-        else
-            vim.notify('blame not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    stage_hunk = function ()
-        if gitsigns then
-            gitsigns.stage_hunk()
-        else
-            vim.notify('stage hunk not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    reset_hunk = function ()
-        if gitsigns then
-            gitsigns.reset_hunk()
-        else
-            vim.notify('reset hunk not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    preview_hunk = function ()
-        if gitsigns then
-            gitsigns.preview_hunk()
-        else
-            vim.notify('preview hunk not available', vim.log.levels.ERROR)
-        end
-    end,
-
-    dashboard = function ()
-        if neogit then
-            neogit.open()
-        else
-            vim.notify('Neogit not available', vim.log.levels.ERROR)
-        end
-    end,
+    blame        = coalesce(gitsigns and gitsigns.blame, error 'blame'),
+    stage_hunk   = coalesce(gitsigns and gitsigns.stage_hunk, error 'stage hunk'),
+    reset_hunk   = coalesce(gitsigns and gitsigns.reset_hunk, error 'reset hunk'),
+    preview_hunk = coalesce(gitsigns and gitsigns.preview_hunk, error 'preview hunk'),
+    dashboard    = coalesce(neogit and neogit.open, error 'neogit')
 }
 
 return M
