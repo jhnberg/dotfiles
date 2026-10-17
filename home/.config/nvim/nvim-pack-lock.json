@@ -15,6 +15,11 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim.git",
       "version": "'v2.1.0'"
     },
+    "guttermarks.nvim": {
+      "rev": "50088f99c2e978afe7f8e339e98b397babc7cbd2",
+      "src": "https://github.com/dimtion/guttermarks.nvim.git",
+      "version": "'main'"
+    },
     "neogit": {
       "rev": "e106a39a8a37a9420f374545c876f8b52baf1c80",
       "src": "https://github.com/NeogitOrg/neogit.git",

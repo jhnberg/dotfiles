@@ -41,6 +41,10 @@ local function populate(scheme)
         ['WarningMsg']             = scheme.message.error,
         ['ModeMsg']                = scheme.message.info,
 
+        -- Marks
+        ['GutterMarksGlobal']      = scheme.general.mark_global,
+        ['GutterMarksLocal']       = scheme.general.mark_local,
+
         -- Diagnostics
         ['DiagnosticOK']           = scheme.message.success,
         ['DiagnosticHint']         = scheme.message.hint,

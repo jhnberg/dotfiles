@@ -57,6 +57,8 @@ local function derive_catppuccin_scheme(colours)
             linenr_active   = { fg = colours.lavender },
             search_inactive = { fg = colours.surface0, bg = colours.teal },
             search_active   = { fg = colours.surface0, bg = colours.teal },
+            mark_global     = { fg = colours.mauve, bold = true },
+            mark_local      = { fg = colours.blue, bold = true },
         },
         border = {
             active   = { fg = colours.lavender, bg = 'none' },
