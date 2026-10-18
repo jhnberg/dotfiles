@@ -30,17 +30,16 @@ vim.keymap.set('n', 'grr', funcs.lsp_references)
 vim.keymap.set('n', 'grt', funcs.lsp_definitions)
 vim.keymap.set('n', 'gri', funcs.lsp_implementations)
 vim.keymap.set('n', 'gO', funcs.lsp_document_symbols)
-vim.keymap.set('n', 'q:', funcs.history.command)
-vim.keymap.set('n', 'q/', funcs.history.search_fwd)
+vim.keymap.set('n', 'q:', funcs.search.command_history)
 
 -- Custom keymaps
-vim.keymap.set('n', '<leader>/', funcs.general.live_grep, {
+vim.keymap.set('n', '<leader>/', funcs.search.live_grep, {
     desc = 'Live grep',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>\'', funcs.general.search_resume, {
+vim.keymap.set('n', '<leader>\'', funcs.search.resume, {
     desc = 'Resume searching',
     nowait = true,
     noremap = true,
@@ -184,8 +183,14 @@ vim.keymap.set('n', '<leader>gh', funcs.git.preview_hunk, {
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>sd', funcs.search_diagnostics, {
+vim.keymap.set('n', '<leader>sd', funcs.search.diagnostics, {
     desc = 'Search diagnostics',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>s/', funcs.search.history, {
+    desc = 'Search history',
     nowait = true,
     noremap = true,
 })

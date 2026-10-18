@@ -50,4 +50,5 @@ which_key.setup({
 which_key.add {
     { '<leader>g', group = 'Git' },
     { '<leader>h', group = 'Help' },
+    { '<leader>s', group = 'Search' },
 }

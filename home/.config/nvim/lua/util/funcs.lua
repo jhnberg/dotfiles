@@ -66,7 +66,7 @@ end
 local M = {}
 
 local files = {
-    find_in_cwd        = telescope and telescope.find_files,
+    find_in_cwd = telescope and telescope.find_files,
     find_recent = telescope and telescope.oldfiles,
     find_in_dir = function (path)
         if not telescope or not path or not vim.fn.isdirectory(path) then
@@ -89,9 +89,15 @@ local git = {
     stage_hunk   = gitsigns and gitsigns.stage_hunk,
 }
 
+local search = {
+    command_history = telescope and telescope.command_history,
+    diagnostics     = telescope and telescope.diagnostics,
+    resume          = telescope and telescope.resume,
+    history         = telescope and telescope.search_history,
+    live_grep       = telescope and telescope.live_grep,
+}
+
 M.general = {
-    live_grep        = coalesce(telescope and telescope.live_grep, error 'live_grep'),
-    search_resume    = coalesce(telescope and telescope.resume, error 'search resume'),
     spell_suggestion =  function ()
         -- TODO the "z=" keybind also takes a count which selects the item from the
         --      the list of spelling suggestions.
@@ -102,8 +108,6 @@ M.general = {
         end
     end
 }
-
-M.search_diagnostics = coalesce(telescope and telescope.diagnostics, error 'search diagnostics')
 
 M.find = {
     files        = coalesce(files.find_in_cwd, error 'find files'),
@@ -121,10 +125,6 @@ M.find = {
 }
 
 M.buffers = coalesce(telescope and telescope.buffers, error 'buffers')
-M.history = {
-    command    = coalesce(telescope and telescope.command_history, cmd 'normal! q/'),
-    search_fwd = coalesce(telescope and telescope.search_history, cmd 'normal! q/'),
-}
 
 M.lsp_references       = coalesce(telescope and telescope.lsp_references, vim.lsp.buf.references)
 M.lsp_definitions      = coalesce(telescope and telescope.lsp_definitions, vim.lsp.buf.type_definition)
@@ -145,6 +145,14 @@ M.git = {
     preview_hunk = coalesce(git.preview_hunk, error 'git preview hunk'),
     reset_hunk   = coalesce(git.reset_hunk, error 'git reset hunk'),
     stage_hunk   = coalesce(git.stage_hunk, error 'git stage hunk'),
+}
+
+M.search = {
+    command_history = coalesce(search.command_history, cmd 'normal! q/'),
+    diagnostics     = coalesce(search.diagnostics, error 'search diagnostics'),
+    history         = coalesce(search.history, cmd 'normal! q:'),
+    live_grep       = coalesce(search.live_grep, error 'search live grep'),
+    resume          = coalesce(search.resume, error 'search resume'),
 }
 
 return M
