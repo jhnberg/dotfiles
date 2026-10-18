@@ -65,22 +65,6 @@ end
 
 local M = {}
 
-M.general = {
-    live_grep        = coalesce(telescope and telescope.live_grep, error 'live_grep'),
-    search_resume    = coalesce(telescope and telescope.resume, error 'search resume'),
-    spell_suggestion =  function ()
-        -- TODO the "z=" keybind also takes a count which selects the item from the
-        --      the list of spelling suggestions.
-        if telescope then
-            telescope.spell_suggest()
-        else
-            vim.cmd('normal! z=')
-        end
-    end
-}
-
-M.search_diagnostics = coalesce(telescope and telescope.diagnostics, error 'search diagnostics')
-
 local files = {
     find_in_cwd        = telescope and telescope.find_files,
     find_recent = telescope and telescope.oldfiles,
@@ -96,6 +80,30 @@ local files = {
         end
     end
 }
+
+local git = {
+    blame        = gitsigns and gitsigns.blame,
+    dashboard    = neogit and neogit.open,
+    preview_hunk = gitsigns and gitsigns.preview_hunk,
+    reset_hunk   = gitsigns and gitsigns.reset_hunk,
+    stage_hunk   = gitsigns and gitsigns.stage_hunk,
+}
+
+M.general = {
+    live_grep        = coalesce(telescope and telescope.live_grep, error 'live_grep'),
+    search_resume    = coalesce(telescope and telescope.resume, error 'search resume'),
+    spell_suggestion =  function ()
+        -- TODO the "z=" keybind also takes a count which selects the item from the
+        --      the list of spelling suggestions.
+        if telescope then
+            telescope.spell_suggest()
+        else
+            vim.cmd('normal! z=')
+        end
+    end
+}
+
+M.search_diagnostics = coalesce(telescope and telescope.diagnostics, error 'search diagnostics')
 
 M.find = {
     files        = coalesce(files.find_in_cwd, error 'find files'),
@@ -129,14 +137,6 @@ M.help = {
     highlights   = coalesce(telescope and telescope.highlights, error 'highlights'),
     keymaps      = coalesce(telescope and telescope.keymaps, error 'keymaps'),
     help_tags    = coalesce(telescope and telescope.help_tags, error 'help tags')
-}
-
-local git = {
-    blame        = gitsigns and gitsigns.blame,
-    dashboard    = neogit and neogit.open,
-    preview_hunk = gitsigns and gitsigns.preview_hunk,
-    reset_hunk   = gitsigns and gitsigns.reset_hunk,
-    stage_hunk   = gitsigns and gitsigns.stage_hunk,
 }
 
 M.git = {
