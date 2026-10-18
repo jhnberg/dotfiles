@@ -38,6 +38,9 @@ local telescope = require_or_nil 'telescope.builtin'
 local gitsigns = require_or_nil 'gitsigns'
 local neogit = require_or_nil 'neogit'
 
+
+local paths = require 'util.paths'
+
 local function coalesce(...)
     for _, fn in ipairs { ... } do
         if type(fn) == 'function' then
@@ -78,17 +81,6 @@ M.general = {
 
 M.search_diagnostics = coalesce(telescope and telescope.diagnostics, error 'search diagnostics')
 
-local home_dir      = vim.env['HOME']
-local desktop_dir   = vim.env['XDG_DESKTOP_DIR'] or vim.fs.joinpath(home_dir, 'Desktop')
-local documents_dir = vim.env['XDG_DESKTOP_DIR'] or vim.fs.joinpath(home_dir, 'Documents')
-local downloads_dir = vim.env['XDG_DOWNLOAD_DIR'] or vim.fs.joinpath(home_dir, 'Downloads')
-local music_dir     = vim.env['XDG_MUSIC_DIR'] or vim.fs.joinpath(home_dir, 'Music')
-local pictures_dir  = vim.env['XDG_PICTURES_DIR'] or vim.fs.joinpath(home_dir, 'Pictures')
-local projects_dir  = vim.env['XDG_PROJECTS_DIR'] or vim.fs.joinpath(home_dir, 'Projects')
-local public_dir    = vim.env['XDG_PUBLICSHARE_DIR'] or vim.fs.joinpath(home_dir, 'Public')
-local templates_dir = vim.env['XDG_TEMPLATES_DIR'] or vim.fs.joinpath(home_dir, 'Templates')
-local videos_dir    = vim.env['XDG_VIDEOS_DIR'] or vim.fs.joinpath(home_dir, 'Videos')
-
 local files = {
     find_in_cwd        = telescope and telescope.find_files,
     find_recent = telescope and telescope.oldfiles,
@@ -108,16 +100,16 @@ local files = {
 M.find = {
     files        = coalesce(files.find_in_cwd, error 'find files'),
     recent_files = coalesce(files.find_recent, error 'recent files'),
-    in_home      = coalesce(files.find_in_dir(home_dir), error 'find home files'),
-    in_desktop   = coalesce(files.find_in_dir(desktop_dir), error 'find desktop files'),
-    in_documents = coalesce(files.find_in_dir(documents_dir), error 'find documents files'),
-    in_downloads = coalesce(files.find_in_dir(downloads_dir), error 'find downloads files'),
-    in_pictures  = coalesce(files.find_in_dir(pictures_dir), error 'find pictures files'),
-    in_projects  = coalesce(files.find_in_dir(projects_dir), error 'find projects files'),
-    in_public    = coalesce(files.find_in_dir(public_dir), error 'find public files'),
-    in_templates = coalesce(files.find_in_dir(templates_dir), error 'find templates files'),
-    in_videos    = coalesce(files.find_in_dir(videos_dir), error 'find videos files'),
-    in_music     = coalesce(files.find_in_dir(music_dir), error 'find music files'),
+    in_home      = coalesce(files.find_in_dir(paths.home), error 'find home files'),
+    in_desktop   = coalesce(files.find_in_dir(paths.xdg.desktop), error 'find desktop files'),
+    in_documents = coalesce(files.find_in_dir(paths.xdg.documents), error 'find documents files'),
+    in_downloads = coalesce(files.find_in_dir(paths.xdg.downloads), error 'find downloads files'),
+    in_pictures  = coalesce(files.find_in_dir(paths.xdg.pictures), error 'find pictures files'),
+    in_projects  = coalesce(files.find_in_dir(paths.xdg.projects), error 'find projects files'),
+    in_public    = coalesce(files.find_in_dir(paths.xdg.public), error 'find public files'),
+    in_templates = coalesce(files.find_in_dir(paths.xdg.templates), error 'find templates files'),
+    in_videos    = coalesce(files.find_in_dir(paths.xdg.videos), error 'find videos files'),
+    in_music     = coalesce(files.find_in_dir(paths.xdg.music), error 'find music files'),
 }
 
 M.buffers = coalesce(telescope and telescope.buffers, error 'buffers')
