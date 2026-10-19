@@ -31,7 +31,6 @@ DIRS=("env/"
 # invocation
 COPY_FILES=("env/*"
             "repos.conf/eselect-repo.conf"
-            "repos.conf/local.conf"
             "sets/**"
             "package.env"
             "package.license"
@@ -83,12 +82,6 @@ do
         cp --update=none ${file} ${PORTAGE_DIR}/${file#etc/portage/}
     done
 done
-
-# Install the files for the local repository, these will not be synced online
-# as they are just conveniences.
-mkdir -p "${PORTAGE_REPOS_DIR}/local"
-rsync -avA --delete "${PWD}/pkgs/" "${PORTAGE_REPOS_DIR}/local/"
-chown -R portage:portage "${PORTAGE_REPOS_DIR}/local"
 
 # The enabled repos should are automatically detected.
 #
