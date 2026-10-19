@@ -22,10 +22,6 @@ vim.pack.add({
         version = "v0.2.2"
     },
     {
-        src = 'https://github.com/nvim-treesitter/nvim-treesitter.git',
-        version = 'main',
-    },
-    {
         src = "https://github.com/nvim-lua/plenary.nvim",
         version = "v0.1.4"
     },

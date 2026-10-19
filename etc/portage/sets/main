@@ -37,14 +37,6 @@ app-shells/zsh-completions
 dev-cpp/gtest
 dev-debug/strace
 dev-lang/rust
-dev-libs/tree-sitter-c
-dev-libs/tree-sitter-cmake
-dev-libs/tree-sitter-cpp
-dev-libs/tree-sitter-json
-dev-libs/tree-sitter-lua
-dev-libs/tree-sitter-markdown
-dev-libs/tree-sitter-python
-dev-libs/tree-sitter-rust
 dev-python/cryptography
 dev-python/flake8
 dev-python/mypy
@@ -53,6 +45,7 @@ dev-vcs/git
 dev-util/bear
 dev-util/lua-language-server
 dev-util/perf
+dev-util/tree-sitter-cli
 dev-util/xxd
 llvm-core/clang
 llvm-core/lldb

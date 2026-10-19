@@ -25,11 +25,6 @@
       "src": "https://github.com/NeogitOrg/neogit.git",
       "version": "'v3.0.0'"
     },
-    "nvim-treesitter": {
-      "rev": "d4a9b23a383266bdb0bfb42d565f31e83f27be5e",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git",
-      "version": "'main'"
-    },
     "plenary.nvim": {
       "rev": "50012918b2fc8357b87cff2a7f7f0446e47da174",
       "src": "https://github.com/nvim-lua/plenary.nvim",
