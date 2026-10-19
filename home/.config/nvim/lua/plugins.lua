@@ -14,10 +14,6 @@
 
 vim.pack.add({
     {
-        src = 'https://github.com/nvimdev/dashboard-nvim.git',
-        version = 'master',
-    },
-    {
         src = "https://github.com/gentoo/gentoo-syntax",
         version = "v16"
     },
@@ -56,10 +52,6 @@ vim.pack.add({
     {
         src = 'https://github.com/dimtion/guttermarks.nvim.git',
         version = 'main',
-    },
-    {
-        src = 'https://github.com/stevearc/oil.nvim.git',
-        version = 'v2.16.0',
     },
 })
 
