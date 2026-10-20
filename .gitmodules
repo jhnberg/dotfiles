@@ -1,3 +1,18 @@
 [submodule "deps/tree-sitter-cpp"]
 	path = deps/tree-sitter-cpp
 	url = https://github.com/tree-sitter/tree-sitter-cpp.git
+[submodule "deps/tree-sitter-make"]
+	path = deps/tree-sitter-make
+	url = https://github.com/tree-sitter-grammars/tree-sitter-make.git
+[submodule "deps/tree-sitter-rust"]
+	path = deps/tree-sitter-rust
+	url = https://github.com/tree-sitter/tree-sitter-rust.git
+[submodule "deps/tree-sitter-python"]
+	path = deps/tree-sitter-python
+	url = https://github.com/tree-sitter/tree-sitter-python.git
+[submodule "deps/tree-sitter-json"]
+	path = deps/tree-sitter-json
+	url = https://github.com/tree-sitter/tree-sitter-json.git
+[submodule "deps/tree-sitter-bash"]
+	path = deps/tree-sitter-bash
+	url = https://github.com/tree-sitter/tree-sitter-bash.git
