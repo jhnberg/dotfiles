@@ -16,3 +16,9 @@
 [submodule "deps/tree-sitter-bash"]
 	path = deps/tree-sitter-bash
 	url = https://github.com/tree-sitter/tree-sitter-bash.git
+[submodule "deps/tree-sitter-css"]
+	path = deps/tree-sitter-css
+	url = https://github.com/tree-sitter/tree-sitter-css.git
+[submodule "deps/tree-sitter-go"]
+	path = deps/tree-sitter-go
+	url = https://github.com/tree-sitter/tree-sitter-go.git

@@ -11,8 +11,10 @@ NVIM_DATA_DIR:=$(XDG_DATA_HOME)/nvim
 # with NeoVIM.
 LANGS:= bash   \
 		cpp    \
-		make   \
+		css    \
+		go     \
 		json   \
+		make   \
 		python \
 		rust
 
@@ -30,7 +32,7 @@ install: nvim-install-config $(addprefix nvim-install-tree-sitter-,$(LANGS))
 nvim-install-config:
 	@echo nvim installing config files
 	@mkdir -p $(NVIM_CONFIG_DIR)
-	@p -r home/.config/nvim/ $(XDG_CONFIG_HOME)
+	@cp -r home/.config/nvim/ $(XDG_CONFIG_HOME)/
 
 # Installing tree-sitter parsers (and query files). These go into the nvim
 # XDG_DATA_HOME directory.
