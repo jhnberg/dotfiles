@@ -23,6 +23,11 @@ vim.opt.tabstop        = 4
 vim.opt.softtabstop    = 4
 vim.opt.shiftwidth     = 4
 
+vim.opt.foldenable = false
+vim.opt.foldcolumn = '0'
+vim.opt.foldlevel  = 10
+vim.opt.foldmethod = 'indent'
+
 vim.opt.spell     = true
 vim.opt.spelllang = {
     "en_gb",
@@ -42,6 +47,21 @@ vim.api.nvim_create_autocmd('TermOpen', {
     end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+    desc = 'Tree Sitter autocmd',
+    callback = function (args)
+        local lang = args.match
+        if vim.treesitter.language.add(lang) then
+            if vim.treesitter.query.get(lang, 'folds') then
+                -- If folds.scm is available then use tree-sitter for folding.
+                vim.opt_local.foldmethod = 'expr'
+                vim.opt_local.foldexpr   = 'v:lua.vim.treesitter.foldexpr()'
+            end
+            vim.treesitter.start(args.buf,  lang)
+        end
+    end
+})
+
 vim.opt.timeout     = false
 vim.opt.timeoutlen  = 0
 vim.opt.ttimeoutlen = 0
@@ -59,7 +79,6 @@ require("theme/catppuccin").mocha.apply()
 
 require 'config/keybinds'
 require 'config/lsp'
-require 'config/treesitter'
 require 'config/statusline'
 require 'config.neogit'
 require 'config.which-key'
