@@ -48,6 +48,7 @@ which_key.setup({
 --
 -- TODO: Avoid duplicating the keymaps.
 which_key.add {
+    { '<leader>b', group = 'Buffer' },
     { '<leader>g', group = 'Git' },
     { '<leader>h', group = 'Help' },
     { '<leader>s', group = 'Search' },

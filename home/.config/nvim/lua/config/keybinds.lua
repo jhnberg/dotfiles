@@ -51,6 +51,18 @@ vim.keymap.set('n', '<leader>bb', funcs.buffers, {
     noremap = true,
 })
 
+vim.keymap.set('n', '<leader>bn', '<cmd>bnext<cr>', {
+    desc = 'Next buffer',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>bN', '<cmd>bprev<cr>', {
+    desc = 'Previous buffer',
+    nowait = true,
+    noremap = true,
+})
+
 vim.keymap.set('n', '<leader>ff', funcs.find.files, {
     desc = 'Find files',
     nowait = true,
