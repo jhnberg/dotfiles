@@ -35,33 +35,6 @@ vim.opt.spelllang = {
     "sv"
 }
 
--- Disable spellchecking on terminals, otherwise we have some pretty weird
--- looking text.
-vim.api.nvim_create_autocmd('TermOpen', {
-    group = vim.api.nvim_create_augroup('TerminalSpellCheck', {
-        clear = true
-    }),
-    pattern = "*",
-    callback = function()
-        vim.opt_local.spell = false
-    end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-    desc = 'Tree Sitter autocmd',
-    callback = function (args)
-        local lang = args.match
-        if vim.treesitter.language.add(lang) then
-            if vim.treesitter.query.get(lang, 'folds') then
-                -- If folds.scm is available then use tree-sitter for folding.
-                vim.opt_local.foldmethod = 'expr'
-                vim.opt_local.foldexpr   = 'v:lua.vim.treesitter.foldexpr()'
-            end
-            vim.treesitter.start(args.buf,  lang)
-        end
-    end
-})
-
 vim.opt.timeout     = false
 vim.opt.timeoutlen  = 0
 vim.opt.ttimeoutlen = 0
