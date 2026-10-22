@@ -77,6 +77,7 @@ vim.diagnostic.config({
 
 require("theme/catppuccin").mocha.apply()
 
+require 'config.autocmd'
 require 'config/keybinds'
 require 'config/lsp'
 require 'config/statusline'
