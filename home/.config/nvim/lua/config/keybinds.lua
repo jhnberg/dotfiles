@@ -45,20 +45,26 @@ vim.keymap.set('n', '<leader>\'', funcs.search.resume, {
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>bb', funcs.buffers, {
+vim.keymap.set('n', '<leader>bb', funcs.buffer.picker, {
     desc = 'Buffers',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>bn', '<cmd>bnext<cr>', {
+vim.keymap.set('n', '<leader>b]', funcs.buffer.next, {
     desc = 'Next buffer',
     nowait = true,
     noremap = true,
 })
 
-vim.keymap.set('n', '<leader>bN', '<cmd>bprev<cr>', {
+vim.keymap.set('n', '<leader>b[', funcs.buffer.prev, {
     desc = 'Previous buffer',
+    nowait = true,
+    noremap = true,
+})
+
+vim.keymap.set('n', '<leader>bs', funcs.buffer.scratch, {
+    desc = 'Scratch buffer',
     nowait = true,
     noremap = true,
 })

@@ -124,7 +124,25 @@ M.find = {
     in_music     = coalesce(files.find_in_dir(paths.xdg.music), error 'find music files'),
 }
 
-M.buffers = coalesce(telescope and telescope.buffers, error 'buffers')
+M.buffer = {
+    picker  = coalesce(telescope and telescope.buffers, error 'buffers'),
+    prev    = '<cmd>bprevious<cr>',
+    next    = '<cmd>next<cr>',
+    scratch = function ()
+        local width = math.ceil(vim.o.columns * 0.80)
+        local height = math.ceil(vim.o.lines * 0.70)
+        local scratch_buf = vim.api.nvim_create_buf(false, true)
+        vim.api.nvim_open_win(scratch_buf, true, {
+            width    = width,
+            height   = height,
+            col      = math.floor((vim.o.columns - width) / 2),
+            row      = math.floor((vim.o.lines - height) / 2),
+            relative = 'editor',
+            style    = 'minimal',
+            border   = 'rounded'
+        })
+    end
+}
 
 M.lsp_references       = coalesce(telescope and telescope.lsp_references, vim.lsp.buf.references)
 M.lsp_definitions      = coalesce(telescope and telescope.lsp_definitions, vim.lsp.buf.type_definition)
