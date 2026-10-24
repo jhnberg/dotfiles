@@ -23,6 +23,10 @@ docker build -t $CONTAINER_TAG .
 docker run --interactive --tty --rm $CONTAINER_TAG
 ```
 
+**NOTE:** If your terminal supports truecolor then also include the following
+          arguments ``-e TERM -e COLORTERM``. This lets applications render
+          with true colours if applicable.
+
 ---
 
 The setup only includes a small number of packages for making the container
