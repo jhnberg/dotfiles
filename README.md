@@ -10,7 +10,7 @@ setting up another system.
 
 1. Create the docker container:
 
-```
+```bash
 docker build -t $CONTAINER_TAG .
 ```
 
@@ -19,7 +19,7 @@ docker build -t $CONTAINER_TAG .
 
 2. Run the created docker container:
 
-```
+```bash
 docker run --interactive --tty --rm $CONTAINER_TAG
 ```
 
