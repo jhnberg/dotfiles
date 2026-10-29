@@ -84,6 +84,12 @@ local files = {
 local git = {
     blame        = gitsigns and gitsigns.blame,
     dashboard    = neogit and neogit.open,
+    log          = neogit and function ()
+        neogit.open {
+            'log',
+            kind = 'tab',
+        }
+    end,
     preview_hunk = gitsigns and gitsigns.preview_hunk,
     reset_hunk   = gitsigns and gitsigns.reset_hunk,
     stage_hunk   = gitsigns and gitsigns.stage_hunk,
@@ -160,6 +166,7 @@ M.help = {
 M.git = {
     blame        = coalesce(git.blame, error 'git blame'),
     dashboard    = coalesce(git.dashboard, error 'git dashboard'),
+    log          = coalesce(git.log, error 'git log'),
     preview_hunk = coalesce(git.preview_hunk, error 'git preview hunk'),
     reset_hunk   = coalesce(git.reset_hunk, error 'git reset hunk'),
     stage_hunk   = coalesce(git.stage_hunk, error 'git stage hunk'),
