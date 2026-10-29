@@ -14,6 +14,7 @@
 
 hl.env('HYPRCURSOR_THEME', 'Catppuccin Mocha Dark')
 hl.env('HYPRCURSOR_SIZE', 28)
+hl.env('GTK_THEME', 'catppuccin-mocha-mauve-standard+default')
 
 hl.monitor {
     output = '',
