@@ -56,7 +56,7 @@ hl.bind('SUPER + mouse_up', hl.dsp.layout 'move +col', {
     repeating = true,
 })
 
-hl.bind('SUPER + ' .. mouse.lmb, hl.dsp.window.drag {}, {
+hl.bind('SUPER + ' .. mouse.lmb, hl.dsp.window.drag(), {
     description = 'Move the active window using the mouse'
 })
 
