@@ -56,6 +56,8 @@ local function populate(scheme)
         ['Added']                  = scheme.diff.added,
         ['Removed']                = scheme.diff.removed,
         ['Changed']                = scheme.diff.changed,
+        ['NeogitDiffAdd']          = scheme.diff.added,
+        ['NeogitDiffDelete']       = scheme.diff.removed,
 
         -- Spelling
         ['SpellBad']               = scheme.spell.bad,
