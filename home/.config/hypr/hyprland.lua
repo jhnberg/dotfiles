@@ -214,7 +214,6 @@ hl.config {
         smart_split = false,
         smart_resizing = true,
         permanent_direction_override = false,
-        special_scale_factor = 1.0,
         split_width_multiplier = true,
         default_split_ratio = 1.0,
         split_bias = false,
