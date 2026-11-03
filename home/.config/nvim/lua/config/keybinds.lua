@@ -70,6 +70,8 @@ vim.keymap.set('n', '<leader>hH', funcs.help.highlights, desc 'Highlights')
 
 vim.keymap.set('n', '<leader>gg', funcs.git.dashboard, desc 'Dashboard')
 vim.keymap.set('n', '<leader>gb', funcs.git.blame, desc 'Blame')
+vim.keymap.set('n', '<leader>gc', funcs.git.commit, desc 'Commit')
+vim.keymap.set('n', '<leader>gd', funcs.git.diff, desc 'Diff')
 vim.keymap.set('n', '<leader>gl', funcs.git.log, desc 'Log')
 vim.keymap.set('n', '<leader>gs', funcs.git.stage_hunk, desc 'Stage a hunk')
 vim.keymap.set('n', '<leader>gR', funcs.git.reset_hunk, desc 'Reset a hunk')

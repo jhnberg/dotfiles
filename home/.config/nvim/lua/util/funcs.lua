@@ -83,6 +83,18 @@ local files = {
 
 local git = {
     blame        = gitsigns and gitsigns.blame,
+    commit       = neogit and function ()
+        neogit.open {
+            'commit',
+            kind = 'tab',
+        }
+    end,
+    diff         = neogit and function ()
+        neogit.open {
+            'diff',
+            kind = 'tab',
+        }
+    end,
     dashboard    = neogit and neogit.open,
     log          = neogit and function ()
         neogit.open {
@@ -165,6 +177,8 @@ M.help = {
 
 M.git = {
     blame        = coalesce(git.blame, error 'git blame'),
+    commit       = coalesce(git.commit, error 'git commit'),
+    diff         = coalesce(git.diff, error 'git diff'),
     dashboard    = coalesce(git.dashboard, error 'git dashboard'),
     log          = coalesce(git.log, error 'git log'),
     preview_hunk = coalesce(git.preview_hunk, error 'git preview hunk'),
