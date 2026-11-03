@@ -10,6 +10,7 @@ NVIM_DATA_DIR:=$(XDG_DATA_HOME)/nvim
 # This is not including any parsers/queries which already ship
 # with NeoVIM.
 LANGS:= bash   \
+		cmake  \
 		cpp    \
 		css    \
 		go     \
