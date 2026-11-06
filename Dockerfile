@@ -24,6 +24,7 @@ RUN MAKEOPTS="-j$(nproc)"                                               \
                                      app-misc/tmux                      \
                                      app-portage/eix                    \
                                      dev-util/tree-sitter-cli           \
+                                     sys-apps/fd                        \
                                      sys-apps/ripgrep                   \
                                      sys-process/htop                   \
                                      sys-process/btop                   \
