@@ -23,6 +23,7 @@
 # Wiki: https://wiki.gentoo.org/wiki//etc/portage/package.mask
 
 =net-misc/wget-1.25.0-r3
+=sys-apps/xdg-desktop-portal-1.22.1
 =www-client/firefox-154.0
 =www-client/firefox-154.0.1
 =www-client/firefox-155.0
