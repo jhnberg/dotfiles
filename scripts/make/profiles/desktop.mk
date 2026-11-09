@@ -1,0 +1,10 @@
+include scripts/make/modules/rofi.mk
+include scripts/make/modules/alacritty.mk
+include scripts/make/modules/btop.mk
+include scripts/make/modules/eww.mk
+include scripts/make/modules/hypr.mk
+include scripts/make/modules/mako.mk
+include scripts/make/modules/nvim.mk
+include scripts/make/modules/waybar.mk
+include scripts/make/modules/wlogout.mk
+include scripts/make/modules/zsh.mk

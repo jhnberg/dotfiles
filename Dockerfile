@@ -47,7 +47,5 @@ RUN xdg-user-dirs-update
 RUN mkdir -p Projects
 COPY --chown=$USERNAME:$USERNAME . Projects/dotfiles
 RUN cd Projects/dotfiles && git submodule update --init
-RUN cd Projects/dotfiles && ./scripts/install.sh
-RUN cd Projects/dotfiles && make -j$(nproc) -f scripts/nvim.mk install
-RUN cd Projects/dotfiles && make -j$(nproc) -f scripts/zsh.mk install
+RUN cd Projects/dotfiles && make -j$(nproc) install PROFILE=minimal
 CMD zsh

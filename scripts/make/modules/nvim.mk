@@ -1,11 +1,3 @@
-# This file is a helper for installing NeoVIM configuration files and extra
-# dependencies.
-
-XDG_CONFIG_HOME?=$(HOME)/.config
-XDG_DATA_HOME?=$(HOME)/.local/share
-NVIM_CONFIG_DIR=$(XDG_CONFIG_HOME)/nvim
-NVIM_DATA_DIR:=$(XDG_DATA_HOME)/nvim
-
 # The list of languages to build/install for tree-sitter.
 # This is not including any parsers/queries which already ship
 # with NeoVIM.
@@ -19,12 +11,10 @@ LANGS:= bash   \
 		python \
 		rust
 
-.PHONY: all
-all:
-	@echo run with the install target to install nvim files.
-	@echo
-	@echo NVIM_CONFIG_DIR=$(NVIM_CONFIG_DIR)
-	@echo NVIM_DATA_DIR=$(NVIM_DATA_DIR)
+
+include scripts/make/xdg.mk
+NVIM_CONFIG_DIR=$(XDG_CONFIG_HOME)/nvim
+NVIM_DATA_DIR:=$(XDG_DATA_HOME)/nvim
 
 .PHONY: install
 install: nvim-install-config $(addprefix nvim-install-tree-sitter-,$(LANGS))
