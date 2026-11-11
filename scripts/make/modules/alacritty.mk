@@ -1,3 +1,5 @@
+include scripts/make/xdg.mk
+
 .PHONY: install
 install: alacritty-install-config
 

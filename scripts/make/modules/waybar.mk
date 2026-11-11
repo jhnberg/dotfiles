@@ -1,8 +1,7 @@
 include scripts/make/xdg.mk
 
 .PHONY: install
-install: waybar-install-config    \
-		 wlogout-install-config
+install: waybar-install-config
 
 .PHONY: waybar-install-config
 waybar-install-config:
