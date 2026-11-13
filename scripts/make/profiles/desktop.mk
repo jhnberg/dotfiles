@@ -2,6 +2,7 @@ include scripts/make/modules/alacritty.mk
 include scripts/make/modules/btop.mk
 include scripts/make/modules/eww.mk
 include scripts/make/modules/fastfetch.mk
+include scripts/make/modules/gamemode.mk
 include scripts/make/modules/hypr.mk
 include scripts/make/modules/mako.mk
 include scripts/make/modules/nvim.mk
