@@ -30,7 +30,7 @@ llvm-core/clang-linker-config default-lld
 llvm-runtimes/clang-runtime   default-lld
 gui-apps/rofi-wayland         windowmode
 gui-apps/waybar               tray network
-mail-client/thunderbird       hwaccel
+mail-client/thunderbird       hwaccel system-pipewire
 media-fonts/fontawesome       ttf
 media-libs/babl               introspection lcms
 media-libs/freetype           harfbuzz
