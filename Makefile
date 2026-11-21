@@ -4,6 +4,12 @@ PROFILE?=
 
 .PHONY: install
 install:
+ifeq ($(PROFILE),)
+	@echo "Please set the PROFILE variable. For example"
+	@echo
+	@echo "   make install PROFILE=minimal"
+	@exit 1
+endif
 	@$(MAKE) -f scripts/make/profiles/$(PROFILE).mk install
 
 .PHONY: help
