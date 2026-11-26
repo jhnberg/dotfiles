@@ -14,6 +14,7 @@ endif
 
 .PHONY: help
 help:
+
 	@echo This make file provides some basic utility for installing the
 	@echo configuration found in this repository.
 	@echo
